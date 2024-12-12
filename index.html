@@ -403,7 +403,18 @@
                         <!-- end single work -->
                 <!-- end single work --> <!-- single work -->  <!-- GRAPHIC DESIGN AREAA -->  <!-- single work -->  <!-- GRAPHIC DESIGN AREAA -->  <!-- single work -->  <!-- GRAPHIC DESIGN AREAA -->
 
-              
+              <script>document.addEventListener("keydown", function (event) {
+                if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                    event.preventDefault();
+                    alert("Developer Tools are disabled!");
+                }
+            });
+            
+            document.addEventListener('contextmenu', function (event) {
+                event.preventDefault();
+                alert('Right-click is disabled!');
+            });
+            </script>
 
               
             </div>

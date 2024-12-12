@@ -822,7 +822,18 @@
     <!-- end back to top -->
 
 
+<script>document.addEventListener("keydown", function (event) {
+    if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+        alert("Developer Tools are disabled!");
+    }
+});
 
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+    alert('Right-click is disabled!');
+});
+</script>
 
     <!-- jQuery -->
     <script src="js/jquery-2.1.1.js"></script>
