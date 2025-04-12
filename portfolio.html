@@ -141,28 +141,37 @@
 <!-- 1920 x 1080 START VIDEO HERE SA UBOS--><!-- 1920 x 1080 START VIDEO HERE SA UBOS--><!-- 1920 x 1080 START VIDEO HERE SA UBOS--><!-- 1920 x 1080 START VIDEO HERE SA UBOS-->
 <!-- Thumbnail for Video 2 -->
 
+
+
 <div class="col-md-4 col-sm-6 Ads">
-    <a href="Video/Audio Real Estate.mp4" 
+    <a href="https://youtu.be/3obeUaJoBds?si=yn4gS1qkdOmbeC91" 
        data-fancybox="gallery" 
-       data-caption='CLASSIC BURGER - <a href="javascript:void(0);" onclick="navigateTo(&quot;single-project.html&quot;)">Click Me</a>' 
+       data-caption='CLASSIC BURGER - <a href="single-project.html">Click Me</a>' 
        class="portfolio_item">
-        <!-- Video Thumbnail -->
-        <video id="client-video" autoplay muted playsinline 
-               class="img-responsive" 
-               style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
-            <source src="Video/Audio Real Estate.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="portfolio_item_hover">
-            <div class="portfolio-border clearfix">
-                <div class="item_info">
-                    <span>Click To See More!</span>
-                    <em>Ads / Animation</em>
-                </div>
-            </div>
-        </div>
+
+        <!-- Default: static thumbnail (JPG/PNG) -->
+        <img src="img/GIF/L/V8.gif" 
+             data-gif="img/GIF/L/V8.gif"
+             alt="Classic Burger" 
+             class="img-responsive burger-thumb"
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
     </a>
 </div>
+
+<script>
+    document.querySelectorAll('.burger-thumb').forEach(img => {
+        const gif = img.getAttribute('data-gif');
+        const staticSrc = img.getAttribute('src');
+
+        img.addEventListener('mouseenter', () => {
+            img.setAttribute('src', gif);
+        });
+
+        img.addEventListener('mouseleave', () => {
+            img.setAttribute('src', staticSrc);
+        });
+    });
+</script>
 
 
 <script>
