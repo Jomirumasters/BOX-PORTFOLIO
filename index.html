@@ -40,61 +40,153 @@
         </div>
     </div>
     <!-- end Preloader -->
-
     <div class="container-fluid">
-        <!-- box header -->
+        <!-- Header Section -->
         <header class="box-header">
-          <div class="col-md-4 service-box">
-            <a href="contact.html">
-                <video autoplay loop muted class="icon-video">
-                    <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
-                </video>
-            </a>
+            <div class="framer-container">
+                <nav class="framer-nav">
+                    <!-- Navigation Links (these will scroll away) -->
+                    <div class="framer-links">
+                        <a href="./#:J5PmUo79r" class="framer-link">Home</a>
+                        <a href="./#results" class="framer-link">Results</a>
+                        <a href="./#projects" class="framer-link">My Edits</a>
+                        <a href="./#projects" class="framer-link">Jomiruu</a>
+                        <a href="./#faqs" class="framer-link">FAQ</a>
+                    </div>
+                </nav>
+            </div>
+          
+                <!-- Book a Call Button (fixed on scroll) -->
+        <div class="framer-btn-container">
+            <a href="./#work" class="framer-btn">Book a Call</a>
         </div>
-        
+        </header>
+     
+      <div class="service-box">
+                <a href="contact.html">
+                    <video autoplay loop muted class="icon-video">
+                        <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
+                    </video>
+                </a>
+            </div>
+    
+    
+        <!-- Service Box Video Icon (fixed on scroll) -->
+      
+    
         <style>
+            /* Importing the Poppins font */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: 'Poppins', sans-serif;
+             
+            }
+    
+            .framer-container {
+                width: 100%;
+                background-color: #ffffff;
+                padding: 12px 20px;
+                position: relative;
+                border-radius: 20px;
+                margin: 10px auto;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                max-width: 1000px;
+            }
+    
+            .framer-links {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+    
+            .framer-link {
+                font-size: 16px;
+                color: #333;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease, transform 0.2s ease;
+                padding: 8px 12px;
+                border-radius: 12px;
+            }
+    
+            .framer-link:hover {
+                color: #007aff;
+                background-color: rgba(0, 122, 255, 0.1);
+                transform: translateY(-2px);
+            }
+    
+            /* Book a Call Button fixed at top-right */
+            .framer-btn-container {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+            }
+    
+            .framer-btn {
+                background: linear-gradient(135deg, #007aff, #0051c9);
+                color: #fff;
+                padding: 12px 28px;
+                font-size: 15px;
+                font-weight: 500;
+                text-decoration: none;
+                border-radius: 30px;
+                box-shadow: 0 6px 15px rgba(0, 122, 255, 0.3);
+                transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            }
+    
+            .framer-btn:hover {
+                background: linear-gradient(135deg, #0051c9, #003b91);
+                box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
+                transform: translateY(-3px);
+            }
+    
+            /* Video icon fixed at top-left */
+            .service-box {
+                position: fixed;
+                top: 10px;
+                left: 20px;
+                z-index: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
             .icon-video {
-                width: 80px; /* Adjust this to match the size of the logo */
-                height: auto;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 2px solid #007aff;
+                box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+                overflow: hidden;
+            }
+    
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .framer-links {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .framer-link {
+                    width: 100%;
+                    text-align: center;
+                }
             }
         </style>
-        
-            <!-- box-nav -->
-            <a class="box-primary-nav-trigger" href="#0">
-                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
-            </a>
-            <!-- box-primary-nav-trigger -->
-        </header>
-        <!-- end box header -->
-
-        <!-- nav -->
-        <nav>
-            <ul class="box-primary-nav">
-                <li class="box-label">Explore More!</li>
-
-                <li><a href="index.html">Home</a> <i class="ion-ios-circle-filled color"></i></li>
-                <li><a href="portfolio.html">portfolio</a></li>
-                <li><a href="about.html">Jomiruu</a></li>
-                <li><a href="services.html">Testimonial</a></li>     
-                <li><a href="contact.html">contact me</a></li>
-
-
-
-                <li class="box-label">Socials</li>
-
-                <li class="box-social"><a href="https://www.youtube.com/channel/UCKos7TshDwdU7ajgidS2YRg" target="_blank"><i class="fab fa-youtube"></i></a></li>       
-                <li class="box-social"><a href="https://www.instagram.com/jomiruu/" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
-                <li class="box-social"><a href="https://x.com/i/flow/login?redirect_after_login=%2FJomiruuu" target="_blank"><i class="ion-social-twitter"></i></a></li>
-                <li class="box-social"><a href="https://www.tiktok.com/@jomiruu?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a> </li>
-                    
-               
-              
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-            </ul>
-        </nav>
-        <!-- end nav -->
-
+    </div>
+    
+          
+         
+          
         <!-- box-intro -->
         <section class="box-intro">
             <div class="table-cell">
@@ -112,66 +204,929 @@
                 <div class="scroll"></div>
             </div>
         </section>
-        
-        
-        <!-- end box-intro -->
-    </div>
-
-    <!-- portfolio div -->
-    <div class="portfolio-div">
-        <div class="portfolio">
-            <div class="no-padding portfolio_container">
-                <!-- single work -->
-
-                <div class="col-md-3 col-sm-6 fashion logo">
-                  <a href="http://127.0.0.1:5500/portfolio.html#gallery" class="portfolio_item" data-fancybox="gallery">
-                    <img
-                      src="img/GIF/L/V8.gif"
-                      alt="Vlog Thumbnail"
-                      class="img-responsive"
-                      loading="lazy"
-                      style="width: 100%; display: block; object-fit: cover;"
-                    />
-                    <div class="portfolio_item_hover">
-                      <div class="portfolio-border clearfix">
-                        <div class="item_info">
-                          <span>Watch Video</span>
-                          <em>Vlog / Video editing</em>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                
 
 
 
-  <!-- end single work -->   <!-- end single work -->   <!-- end single work -->   <!-- end single work -->   <!-- end single work --> 
-              
+  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
 
 
-             
 
-              <script>document.addEventListener("keydown", function (event) {
-                if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
-                    event.preventDefault();
-                    alert("Developer Tools are disabled!");
-                }
-            });
-            
-            document.addEventListener('contextmenu', function (event) {
-                event.preventDefault();
-                alert('Right-click is disabled!');
-            });
-            </script>
-
-              
-            </div>
-            <!-- end portfolio_container -->
+<div class="card-container">
+    <div class="card">
+        <div class="card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
+            </svg>
         </div>
-        <!-- portfolio -->
+        <div class="card-content">
+            <h3 class="card-title">Retention Based Editing</h3>
+            <p class="card-description">I edit videos to maximize retention and engagement rates.</p>
+        </div>
+        <div class="gradient-background"></div>
     </div>
-    <!-- end portfolio div -->
+
+    <div class="card">
+        <div class="card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+                <path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"></path>
+            </svg>
+        </div>
+        <div class="card-content">
+            <h3 class="card-title">Premium Visuals</h3>
+            <p class="card-description">Animations are custom-made and unique to your style. Program used: Adobe After Effects, Premiere Pro, Photoshop.</p>
+        </div>
+        <div class="gradient-background"></div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
+            </svg>
+        </div>
+        <div class="card-content">
+            <h3 class="card-title">Love & Care</h3>
+            <p class="card-description">I put love and care into each edit. No half-assing. Only work I am proud of.</p>
+        </div>
+        <div class="gradient-background"></div>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="your-link-here" class="book-call-btn">Book a call</a>
+</div>
+
+<style>
+.card-container {
+    display: flex;
+    gap: 40px; /* More space between cards */
+    justify-content: center;
+    flex-wrap: nowrap; /* Don't wrap to next line */
+    overflow-x: auto; /* Allow horizontal scroll if needed on small screens */
+    padding: 100px;
+}
+
+.card {
+    background-color: #1c1c1e;
+    border-radius: 28px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 440px; /* Bigger card width */
+    min-width: 340px; /* Prevent too small on narrow screens */
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Don't shrink when container overflows */
+
+    /* Add border and margin */
+    border: 3px solid #333; /* Adds a 3px border with dark color */
+    margin: 20px; /* Adds space between cards */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.card-header svg {
+    width: 48px;
+    height: 48px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-title {
+    color: #fafafa;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.card-description {
+    color: #a0a0a0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.gradient-background {
+    background: radial-gradient(60% 60% at 50% 50%, rgba(107, 103, 207, 0.4) 0%, rgba(118, 78, 199, 0.3) 40%, rgba(129, 26, 189, 0) 100%);
+    filter: blur(40px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160%;
+    height: 160%;
+    transform: translate(-30%, -30%);
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.card * {
+    position: relative;
+    z-index: 1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.book-call-btn {
+    background-color: #6B67CF;
+    color: white;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.book-call-btn:hover {
+    background-color: #4f48b6;
+    transform: translateY(-3px);
+}
+
+</style>
+
+      
+
+
+  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
+
+        
+        
+<!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
+<style>
+    section {
+        padding: 60px 20px; /* Reduced padding for a more compact look */
+        text-align: center;
+    
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Shared styles for carousel containers */
+    .carousel-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        margin: 0 auto;
+        border-radius: 25px; /* Rounded corners for sleek look */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    }
+
+    /* First carousel styles */
+    .carousel-track.creators-worked,
+    .carousel-track.my-results {
+        display: flex;
+        gap: 20px;
+        will-change: transform;
+    }
+
+    /* Card styles for carousel items */
+    .creators-worked-card,
+    .my-results-card {
+        flex: 0 0 auto;
+        width: 230px;
+        border: 2px solid #e0e0e0;
+        border-radius: 18px; /* Rounded corners for each card */
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+        transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+
+    .creators-worked-card:hover,
+    .my-results-card:hover {
+        transform: translateY(-5px); /* Subtle hover effect */
+    }
+
+    .creators-worked-card img,
+    .my-results-card img {
+        width: 100%;
+        height: 170px; /* Adjust image height */
+        object-fit: cover;
+        border-bottom: 2px solid #f0f0f0; /* Line between image and text */
+    }
+
+    .creators-worked-info,
+    .my-results-info {
+        padding: 12px;
+    }
+
+    .creators-worked-name,
+    .my-results-name {
+        font-size: 18px;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .creators-worked-followers,
+    .my-results-followers {
+        font-size: 16px;
+        color: #555;
+    }
+
+    /* Headline styles */
+    .custom-box-headline {
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .custom-box-headline span {
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+        background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background for headline */
+        padding: 10px 25px;
+        border-radius: 30px; /* Rounded corners */
+    }
+</style>
+
+<!-- First Carousel -->
+<section>
+    <h1 class="custom-box-headline">
+        <span>Creators I've Worked With</span>
+    </h1>
+    
+    <div class="carousel-container">
+        <div class="carousel-track creators-worked">
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            <!-- Add more creators here -->
+
+
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Dan Kieft</div>
+                    <div class="creators-worked-followers">42K Subs</div>
+                </div>
+            </div>
+            <div class="creators-worked-card">
+                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
+                <div class="creators-worked-info">
+                    <div class="creators-worked-name">Coach Kyle</div>
+                    <div class="creators-worked-followers">1M Followers</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Second Carousel -->
+<section>
+    <h2 class="custom-box-headline">
+        <span>My Results</span>
+    </h2>
+    
+    <div class="carousel-container">
+        <div class="carousel-track my-results">
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+            <div class="my-results-card">
+                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
+                <div class="my-results-info">
+                    <div class="my-results-name">Other Creator</div>
+                    <div class="my-results-followers">900K Subs</div>
+                </div>
+            </div>
+            <!-- Add more results here -->
+        </div>       
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+    function initCarousel(selector, speed) {
+        const track = document.querySelector(selector);
+        const totalWidth = track.scrollWidth;
+
+        gsap.to(track, {
+            x: `-${totalWidth}`,
+            duration: totalWidth / speed,
+            ease: "none",
+            repeat: -1,
+            modifiers: {
+                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
+            }
+        });
+    }
+
+    initCarousel('.creators-worked', 50);
+    initCarousel('.my-results', 30);
+</script>
+
+
+<!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel-->
+
+
+
+
+
+<!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM -->
+
+
+<div class="iphone-style-section-wrapper">
+
+    <h2 class="iphone-style-headline">
+        <span>Long-Form</span>
+    </h2>
+    
+    <style>
+        /* Section wrapper */
+        .iphone-style-section-wrapper {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headline */
+        .iphone-style-headline {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            color: #222;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 40px;
+        }
+
+        .iphone-style-headline span {
+            display: inline-block;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            padding: 12px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Portfolio grid */
+        .iphone-style-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .iphone-style-col {
+            width: 100%;
+            max-width: 33.333%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .iphone-style-col {
+                max-width: 100%;
+            }
+        }
+
+        /* iPhone-style iframe container */
+        .iphone-style-iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #000;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .iphone-style-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .iphone-style-iframe-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+
+    <div class="iphone-style-row">
+        <!-- Video item -->
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Repeat -->
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="iphone-style-col">
+            <div class="iphone-style-iframe-container">
+                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM --><!-- LONG FORM -->
+
+<!-- UNIFIED WORK WITH ME + FAQ SECTION -->
+<div class="unified-section">
+    <!-- Header Section -->
+    <div class="header-container">
+        <h2 class="heading">
+            <span class="main-heading">Work with me!</span><br>
+            Email me at 
+            <a href="mailto:jomilraymundo8@gmail.com" class="email-link">
+                <span class="email-font">JOMILRAYMUNDO8@GMAIL.COM</span>
+            </a>
+        </h2>
+    </div>
+
+    <div class="content-body">
+        <!-- Image Section -->
+        <div class="image-section">
+            <a href="img/About me/Jomiru-3.png" data-fancybox="gallery" data-caption="A peek into my life!">
+                <img src="img/About me/Jomiru-1.png" class="img-responsive" alt="Character 1" />
+            </a>
+        </div>
+
+        <!-- Hidden Gallery -->
+        <div style="display: none;">
+            <a href="img/About me/Jomiru-5.png" data-fancybox="gallery" data-caption="As long as you keep doing it, keep it up! 1% matters.">
+                <img src="img/About me/Jomiru-5.png" alt="Character 4" />
+            </a>
+            <a href="img/About me/Jomiru-4.png" data-fancybox="gallery" data-caption="My 11 cats">
+                <img src="img/About me/Jomiru-4.png" alt="Character 3" />
+            </a>
+            <a href="img/About me/Jomiru-6.png" data-fancybox="gallery" data-caption="I love ninic">
+                <img src="img/About me/Jomiru-6.png" alt="Character 4" />
+            </a>
+            <a href="img/About me/Jomiru-2.png" data-fancybox="gallery" data-caption="Crack the code">
+                <img src="img/About me/Jomiru-2.png" alt="Character 2" />
+            </a>
+            <a href="img/About me/Jomiru-7.png" data-fancybox="gallery" data-caption="GAME ON!">
+                <img src="img/About me/Jomiru-7.png" alt="Character 2" />
+            </a>
+        </div>
+
+        <!-- About Text -->
+        <div class="text-section">
+            <h3 class="uppercase">Hi, I'm Jomiruu</h3>
+            <h5>The Enthusiastic Guy</h5>
+            <p class="text-experience">
+                A Video Editor, Graphic Designer, Content Creator, and Motion Graphics Artist. 
+                I absolutely love what I do. It's been years since I started dreaming of becoming a freelance editor. 
+                It's been a tough process, but I finally figured out how to keep going.
+            </p>
+            <p class="text-experience">
+                With years of practice and experience, I’ve learned to use software like Adobe Photoshop, After Effects, 
+                and Illustrator by watching tutorials on YouTube, Skillshare, and Patreon. From being a perfectionist to 
+                learning to work independently, I can now take on more projects. Practice, experience, and discipline 
+                make everything fall into place. Every 1% matters!
+            </p>
+
+            <!-- Social Links -->
+            <ul class="social-ul">
+                <li><a href="https://www.youtube.com/channel/UCKos7TshDwdU7ajgidS2YRg" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.instagram.com/jomiruu/" target="_blank"><i class="ion-social-instagram-outline"></i></a></li>
+                <li><a href="https://x.com/i/flow/login?redirect_after_login=%2FJomiruuu" target="_blank"><i class="ion-social-twitter"></i></a></li>
+                <li><a href="https://www.tiktok.com/@jomiruu?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faqs">
+        <div class="faq-header">
+            <h2>Have questions?</h2>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">
+                <h3>What do you offer?</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer" id="answer-1">
+                <p>We offer a variety of video editing services, including motion graphics, video design, and content creation tailored to your needs.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">
+                <h3>How can I get started?</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer" id="answer-2">
+                <p>You can start by contacting us through our contact form or email. We’ll schedule a consultation and begin planning your project.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">
+                <h3>What is the cost of your services?</h3>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer" id="answer-3">
+                <p>The cost depends on the scope and complexity of the project. Contact us for a personalized quote!</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- STYLES -->
+<style>
+/* Shared Container */
+.unified-section {
+    color: #FAFAFA;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Satoshi', Arial, sans-serif;
+    margin-bottom: 100px; /* Ensures no footer overlap */
+}
+
+/* Header */
+.header-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.main-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.email-link {
+    color: #76C7FF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #FF5733;
+    text-decoration: underline;
+}
+
+.email-font {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* Content Body */
+.content-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    max-width: 400px; /* Increased image size */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.1); /* Slight zoom on hover for a better effect */
+}
+
+.text-section {
+    max-width: 600px; /* Increased width for better readability */
+}
+
+.uppercase {
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.text-experience {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.social-ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-ul a {
+    color: #FAFAFA;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-ul a:hover {
+    color: #76C7FF;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 60px;
+    background: #fff;
+    color: #333;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    background-color: #f9f9f9;
+    padding: 18px 25px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.faq-question:hover {
+    background-color: #efefef;
+    transform: translateY(-2px);
+}
+
+.toggle-icon {
+    font-size: 1.6rem;
+    color: #007bff;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 25px;
+    background-color: #f1f1f1;
+    border-left: 4px solid #007bff;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-body {
+        flex-direction: column;
+    }
+}
+</style>
+
+<!-- JS -->
+<script>
+function toggleAnswer(number) {
+    const answer = document.getElementById('answer-' + number);
+    const icon = answer.previousElementSibling.querySelector('.toggle-icon');
+    
+    if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+        icon.textContent = "-";
+    } else {
+        answer.style.display = "none";
+        icon.textContent = "+";
+    }
+}
+</script>
+
+<!-- External Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+
+</div>
+
 
     <!-- footer -->
     <footer>
