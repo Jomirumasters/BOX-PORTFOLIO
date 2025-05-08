@@ -55,139 +55,18 @@
                     </div>
                 </nav>
             </div>
-          
-                <!-- Book a Call Button (fixed on scroll) -->
-        <div class="framer-btn-container">
-            <a href="./#work" class="framer-btn">Book a Call</a>
-        </div>
         </header>
-     
-      <div class="service-box">
-                <a href="contact.html">
-                    <video autoplay loop muted class="icon-video">
-                        <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
-                    </video>
-                </a>
-            </div>
     
+        <!-- Eye Icon Section (Fixed, top-left) -->
+        <div class="service-box">
+            <a href="contact.html">
+                <video autoplay loop muted class="icon-video">
+                    <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
+                </video>
+            </a>
+        </div>
     
-        <!-- Service Box Video Icon (fixed on scroll) -->
-      
-    
-        <style>
-            /* Importing the Poppins font */
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-    
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-            body {
-                font-family: 'Poppins', sans-serif;
-             
-            }
-    
-            .framer-container {
-                width: 100%;
-                background-color: #ffffff;
-                padding: 12px 20px;
-                position: relative;
-                border-radius: 20px;
-                margin: 10px auto;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-                max-width: 1000px;
-            }
-    
-            .framer-links {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-    
-            .framer-link {
-                font-size: 16px;
-                color: #333;
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s ease, transform 0.2s ease;
-                padding: 8px 12px;
-                border-radius: 12px;
-            }
-    
-            .framer-link:hover {
-                color: #007aff;
-                background-color: rgba(0, 122, 255, 0.1);
-                transform: translateY(-2px);
-            }
-    
-            /* Book a Call Button fixed at top-right */
-            .framer-btn-container {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 1000;
-            }
-    
-            .framer-btn {
-                background: linear-gradient(135deg, #007aff, #0051c9);
-                color: #fff;
-                padding: 12px 28px;
-                font-size: 15px;
-                font-weight: 500;
-                text-decoration: none;
-                border-radius: 30px;
-                box-shadow: 0 6px 15px rgba(0, 122, 255, 0.3);
-                transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-            }
-    
-            .framer-btn:hover {
-                background: linear-gradient(135deg, #0051c9, #003b91);
-                box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
-                transform: translateY(-3px);
-            }
-    
-            /* Video icon fixed at top-left */
-            .service-box {
-                position: fixed;
-                top: 10px;
-                left: 20px;
-                z-index: 1000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            .icon-video {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                border: 2px solid #007aff;
-                box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
-                overflow: hidden;
-            }
-    
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .framer-links {
-                    flex-direction: column;
-                    align-items: center;
-                }
-    
-                .framer-link {
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-        </style>
-    </div>
-    
-          
-         
-          
-        <!-- box-intro -->
+        <!-- Box Intro Section (Centered) -->
         <section class="box-intro">
             <div class="table-cell">
                 <h1 class="box-headline letters rotate-2">
@@ -199,22 +78,201 @@
                 </h1>
                 <h5>Bring everything to life.</h5>
             </div>
-        
+    
             <div class="mouse">
                 <div class="scroll"></div>
             </div>
         </section>
-
-
-
+    </div>
+    
+    <!-- Add this JavaScript to move the eye icon -->
+    <script>
+        // Function to generate random position
+        function randomPosition() {
+            // Get the viewport dimensions
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+    
+            // Generate random positions within the viewport
+            const randomX = Math.floor(Math.random() * (viewportWidth - 100));  // 100 is the icon's width
+            const randomY = Math.floor(Math.random() * (viewportHeight - 100)); // 100 is the icon's height
+    
+            // Apply the new position to the eye icon
+            const serviceBox = document.querySelector('.service-box');
+            serviceBox.style.left = `${randomX}px`;
+            serviceBox.style.top = `${randomY}px`;
+        }
+    
+        // Move the eye icon every 3 seconds
+        setInterval(randomPosition, 3000); // Adjust interval time (3000ms = 3 seconds)
+    
+        // Call it once to position the icon initially
+        randomPosition();
+    </script>
+    
+    <style>
+        /* Importing the Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        .framer-container {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 12px 20px;
+            position: relative;
+            border-radius: 20px;
+            margin: 10px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+    
+        .framer-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    
+        .framer-link {
+            font-size: 16px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 8px 12px;
+            border-radius: 12px;
+        }
+    
+        .framer-link:hover {
+            color: #007aff;
+            background-color: rgba(0, 122, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    
+        /* Eye Icon Section - Positioned at top-left */
+        .service-box {
+            position: fixed;
+            top: 80px; /* Increased space above to avoid overlap with nav links */
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+        }
+    
+        .icon-video {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #007aff;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+            overflow: hidden;
+        }
+    
+        /* Box Intro Section */
+        .box-intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+        }
+    
+        .box-headline {
+            font-size: 48px;
+            line-height: 1.4;
+        }
+    
+        .box-intro h5 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #555;
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .framer-links {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                font-size: 14px; /* Reduce the font size */
+            }
+    
+            .framer-link {
+                font-size: 14px; /* Adjust link font size */
+                padding: 6px 10px; /* Adjust padding */
+            }
+    
+            .service-box {
+                top: 100px; /* Adjust position further down */
+            }
+    
+            .icon-video {
+                width: 50px;
+                height: 50px;
+            }
+    
+            .box-intro .table-cell {
+                padding: 10px;
+                text-align: center;
+            }
+    
+            .box-headline {
+                font-size: 32px;
+            }
+    
+            .box-intro h5 {
+                font-size: 14px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            /* Further reduce sizes for smaller screens */
+            .framer-link {
+                font-size: 12px;
+                padding: 6px;
+            }
+    
+            /* Eye Icon size adjustment */
+            .icon-video {
+                width: 50px;
+                height: 50px;
+            }
+    
+            .box-headline {
+                font-size: 24px;
+            }
+    
+            .box-intro h5 {
+                font-size: 12px;
+            }
+    
+            .mouse .scroll {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+    
+    
   <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
-
-
 
 <div class="card-container">
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
                 <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
             </svg>
         </div>
@@ -227,7 +285,7 @@
 
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
                 <path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"></path>
             </svg>
         </div>
@@ -240,7 +298,7 @@
 
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fafafa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
                 <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
             </svg>
         </div>
@@ -259,11 +317,10 @@
 <style>
 .card-container {
     display: flex;
-    gap: 40px; /* More space between cards */
+    gap: 24px;
     justify-content: center;
-    flex-wrap: nowrap; /* Don't wrap to next line */
-    overflow-x: auto; /* Allow horizontal scroll if needed on small screens */
-    padding: 100px;
+    flex-wrap: wrap;
+    padding: 60px 20px;
 }
 
 .card {
@@ -271,17 +328,13 @@
     border-radius: 28px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 440px; /* Bigger card width */
-    min-width: 340px; /* Prevent too small on narrow screens */
-    padding: 32px;
+    max-width: 340px;
+    padding: 28px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0; /* Don't shrink when container overflows */
-
-    /* Add border and margin */
-    border: 3px solid #333; /* Adds a 3px border with dark color */
-    margin: 20px; /* Adds space between cards */
+    border: 2px solid #333;
+    flex: 1 1 calc(100% - 40px);
 }
 
 .card:hover {
@@ -292,7 +345,7 @@
 .card-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .card-header svg {
@@ -306,13 +359,13 @@
 
 .card-title {
     color: #fafafa;
-    font-size: 28px;
-    margin-bottom: 12px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .card-description {
     color: #a0a0a0;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -337,15 +390,15 @@
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin: 30px 0;
 }
 
 .book-call-btn {
     background-color: #6B67CF;
     color: white;
-    padding: 16px 40px;
+    padding: 14px 32px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 40px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -357,9 +410,33 @@
     transform: translateY(-3px);
 }
 
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 10px;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .card-description {
+        font-size: 15px;
+    }
+
+    .book-call-btn {
+        width: 90%;
+        text-align: center;
+    }
+}
 </style>
 
-      
 
 
   <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
@@ -468,7 +545,7 @@
 <!-- First Carousel -->
 <section>
     <h1 class="custom-box-headline">
-        <span>Creators I've Worked With</span>
+        <span>Clients</span>
     </h1>
     
     <div class="carousel-container">
