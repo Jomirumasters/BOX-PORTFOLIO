@@ -27,245 +27,552 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<style>
+  /* Preloader Background */
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background-color: #feca3e;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  /* Swing container */
+  .container {
+    position: relative;
+    height: 20em;
+    width: 8em;
+    transform-origin: top center;
+    animation: swing 3s cubic-bezier(0.68, 0.55, 0.265, 1.55) infinite;
+  }
+
+  /* Rope */
+  .rope {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0.15em;
+    height: 5em;
+    background: linear-gradient(to bottom, #fff 0%, #ddd 50%, #fff 100%);
+    border-radius: 0.1em;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: rope-bend 3s cubic-bezier(0.68, 0.55, 0.265, 1.55) infinite;
+  }
+
+  /* Legs */
+  .legs {
+    position: absolute;
+    top: 17.25em;
+    left: 50%;
+    width: 7.5em;
+    height: 1.12em;
+    border-radius: 3.12em;
+    box-shadow:
+      0 0 0 0.12em #140243,
+      0 0 0 1.06em #1b1676,
+      0 0 0 1.18em #140243;
+    background: transparent;
+    transform: translateX(-50%);
+  }
+
+  .boot-l,
+  .boot-r {
+    position: absolute;
+    bottom: 1.12em;
+    height: 1.25em;
+    width: 2.5em;
+    background-color: #e32832;
+    border: 0.12em solid #140243;
+    border-radius: 0.5em;
+  }
+  .boot-l { left: 1em; }
+  .boot-r { left: 3.81em; transform: rotateY(180deg); }
+
+  .boot-l:before,
+  .boot-r:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 1.12em solid #140243;
+    border-left: 1.18em solid transparent;
+    bottom: 1.31em;
+    left: 1.46em;
+  }
+
+  .boot-l:after,
+  .boot-r:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 1.12em solid #e32832;
+    border-left: 1em solid transparent;
+    right: 0;
+    top: -0.93em;
+  }
+
+  /* Costume */
+  .costume {
+    position: absolute;
+    top: 11em;
+    left: 50%;
+    height: 6.25em;
+    width: 5.62em;
+    background: linear-gradient(
+      to right,
+      #1b1676 20%,
+      #e32832 20%,
+      #e32832 80%,
+      #1b1676 80%
+    );
+    border: 0.12em solid #140243;
+    border-radius: 0.3em;
+    transform: translateX(-50%) rotate(0deg);
+    animation: body-tilt 3s ease-in-out infinite;
+  }
+
+  /* Spider */
+  .spider {
+    position: absolute;
+    top: 3.7em;
+    left: 50%;
+    height: 1.87em;
+    width: 0.93em;
+    background-color: #140243;
+    border-radius: 45%;
+    transform: translateX(-50%);
+  }
+
+  /* Spider legs */
+  .s1,
+  .s2,
+  .s3,
+  .s4 {
+    position: absolute;
+    left: 50%;
+    border-bottom: 0.12em solid #140243;
+    transform: translateX(-50%);
+  }
+
+  .s1,
+  .s3 {
+    height: 7.5em;
+    width: 2.5em;
+    border-radius: 0 0 1.37em 1.37em;
+  }
+
+  .s2,
+  .s4 {
+    height: 7.5em;
+    width: 3.12em;
+    border-radius: 0 0 1.56em 1.56em;
+  }
+
+  .s1 { bottom: 1.43em; }
+  .s2 { bottom: 0.93em; }
+  .s3 {
+    top: 1.43em;
+    transform: translateX(-50%) rotateX(180deg);
+  }
+  .s4 {
+    top: 0.93em;
+    transform: translateX(-50%) rotateX(180deg);
+  }
+
+  /* Belt */
+  .belt {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 0.43em;
+    width: 5.87em;
+    background-color: #e32832;
+    border: 0.12em solid #140243;
+    transform: translateX(-50%);
+  }
+
+  /* Hands */
+  .hand-r,
+  .hand-l {
+    position: absolute;
+    bottom: 0.1em;
+    height: 8.12em;
+    width: 1.12em;
+    border-radius: 1.25em;
+    border: 0.12em solid #140243;
+    background: linear-gradient(
+      #e32832 4.6em,
+      #140243 4.6em,
+      #140243 4.75em,
+      #1b1676 4.75em,
+      #1b1676 8.12em
+    );
+  }
+
+  .hand-r {
+    right: -0.75em;
+    transform-origin: bottom;
+    transform: rotate(-22deg);
+  }
+
+  .hand-l {
+    left: -0.75em;
+    transform-origin: bottom;
+    transform: rotate(22deg);
+  }
+
+  /* Neck */
+  .neck {
+    position: absolute;
+    bottom: 5.6em;
+    left: 50%;
+    height: 0.37em;
+    width: 1.25em;
+    background-color: #e32832;
+    border: 0.12em solid #140243;
+    transform: translateX(-50%);
+  }
+
+  /* Mask */
+  .mask {
+    position: absolute;
+    top: 6.56em;
+    left: 50%;
+    height: 4.65em;
+    width: 4.06em;
+    background-color: #e32832;
+    border-radius: 50% 50% 50% 50% / 54% 54% 46% 46%;
+    border: 0.12em solid #140243;
+    transform: translateX(-50%);
+  }
+
+  /* Eyes */
+  .eye-l,
+  .eye-r {
+    position: absolute;
+    top: 2.1em;
+    height: 0.68em;
+    width: 1.37em;
+    background-color: #ffffff;
+    border-radius: 1.37em 1.37em 0 0;
+    border: 0.12em solid #140243;
+  }
+
+  .eye-l { left: 0.3em; }
+  .eye-r { right: 0.3em; }
+
+  /* Animations */
+  @keyframes swing {
+    0%, 100% {
+      transform: rotate(-12deg);
+    }
+    50% {
+      transform: rotate(12deg);
+    }
+  }
+
+  @keyframes rope-bend {
+    0%, 100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(3deg);
+    }
+  }
+
+  @keyframes body-tilt {
+    0%, 100% {
+      transform: translateX(-50%) rotate(6deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(-6deg);
+    }
+  }
+</style>
+</head>
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="pre-container">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
+<!-- Spider-Man Preloader -->
+<div id="preloader">
+  <div class="container center">
+    <div class="rope center">
+      <div class="legs center">
+        <div class="boot-l"></div>
+        <div class="boot-r"></div>
+      </div>
+      <div class="costume center">
+        <div class="spider">
+          <div class="s1 center"></div>
+          <div class="s2 center"></div>
+          <div class="s3"></div>
+          <div class="s4"></div>
         </div>
+        <div class="belt center"></div>
+        <div class="hand-r"></div>
+        <div class="hand-l"></div>
+        <div class="neck center"></div>
+        <div class="mask center">
+          <div class="eye-l"></div>
+          <div class="eye-r"></div>
+        </div>
+        <div class="cover center"></div>
+      </div>
     </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    preloader.style.pointerEvents = 'none';
+    setTimeout(() => preloader.style.display = 'none', 500);
+  });
+</script>
+
     <!-- end Preloader -->
-    <div class="container-fluid">
-        <!-- Header Section -->
-        <header class="box-header">
-            <div class="framer-container">
-                <nav class="framer-nav">
-                    <!-- Navigation Links (these will scroll away) -->
-                    <div class="framer-links">
-                        <a href="./#:J5PmUo79r" class="framer-link">Home</a>
-                        <a href="./#results" class="framer-link">Results</a>
-                        <a href="./#projects" class="framer-link">My Edits</a>
-                        <a href="./#projects" class="framer-link">Jomiruu</a>
-                        <a href="./#faqs" class="framer-link">FAQ</a>
-                    </div>
-                </nav>
-            </div>
-        </header>
+
     
-        <!-- Eye Icon Section (Fixed, top-left) -->
-        <div class="service-box">
-            <a href="contact.html">
-                <video autoplay loop muted class="icon-video">
-                    <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
-                </video>
-            </a>
+   <div class="container-fluid">
+    <!-- Header Section -->
+    <header class="box-header">
+        <div class="framer-container">
+            <nav class="framer-nav">
+        
+                <div class="framer-links">
+                    <a href="" class="framer-link">Home</a>
+                    <a href="" class="framer-link">Results</a>
+                    <a href="" class="framer-link">My Edits</a>
+                    <a href="" class="framer-link">Jomiruu</a>
+                    <a href="./#faqs" class="framer-link">FAQ</a>
+                </div>
+            </nav>
         </div>
+    </header>
     
-        <!-- Box Intro Section (Centered) -->
-        <section class="box-intro">
-            <div class="table-cell">
-                <h1 class="box-headline letters rotate-2">
-                    <span class="box-words-wrapper">
-                        <b class="motion is-visible"><i>Motion</i></b>
-                        <b class="graphics"><i>Graphics</i></b>
-                        <b class="design"><i>Artist</i></b>
-                    </span>
-                </h1>
-                <h5>Bring everything to life.</h5>
-            </div>
-    
-            <div class="mouse">
-                <div class="scroll"></div>
-            </div>
-        </section>
+
+    <!-- Eye Icon Section (Fixed, top-left) -->
+    <div class="service-box">
+        <a href="contact.html">
+            <video autoplay loop muted class="icon-video">
+                <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
+            </video>
+        </a>
     </div>
+
+    <!-- Box Intro Section (Centered) -->
+    <section class="box-intro">
+        <div class="table-cell">
+            <h1 class="box-headline letters rotate-2">
+                <span class="box-words-wrapper">
+                    <b class="motion is-visible"><i>Motion</i></b>
+                    <b class="graphics"><i>Graphics</i></b>
+                    <b class="design"><i>Artist</i></b>
+                </span>
+            </h1>
+            <h5>Bring everything to life.</h5>
+        </div>
+
+        <div class="mouse">
+            <div class="scroll"></div>
+        </div>
+    </section>
+</div>
+
+<!-- Add this JavaScript to move the eye icon -->
+<script>
+    // Function to generate random position
+    function randomPosition() {
+        // Get the viewport dimensions
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Generate random positions within the viewport
+        const randomX = Math.floor(Math.random() * (viewportWidth - 100));  // 100 is the icon's width
+        const randomY = Math.floor(Math.random() * (viewportHeight - 100)); // 100 is the icon's height
+
+        // Apply the new position to the eye icon
+        const serviceBox = document.querySelector('.service-box');
+        serviceBox.style.left = `${randomX}px`;
+        serviceBox.style.top = `${randomY}px`;
+    }
+
+    // Move the eye icon every 3 seconds
+    setInterval(randomPosition, 3000); // Adjust interval time (3000ms = 3 seconds)
+
+    // Call it once to position the icon initially
+    randomPosition();
+</script>
+
+<style>
+    /* Importing the Poppins font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+ 
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
     
-    <!-- Add this JavaScript to move the eye icon -->
-    <script>
-        // Function to generate random position
-        function randomPosition() {
-            // Get the viewport dimensions
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
+    }
+
+.framer-container {
     
-            // Generate random positions within the viewport
-            const randomX = Math.floor(Math.random() * (viewportWidth - 100));  // 100 is the icon's width
-            const randomY = Math.floor(Math.random() * (viewportHeight - 100)); // 100 is the icon's height
+    width: 100%;
+    background-color: #ffffff34;
+    padding: 12px 20px;
+    position: relative;
+    border-radius: 20px;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Default for desktop */
+}
+
+
+    .framer-links {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        align-items: center;
+        padding: 0px 0;
+    }
+
+    .framer-link {
+        font-size: 16px;
+        color: #052419;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 0px;
+        border-radius: 30px;
+     
+    }
+
+    .framer-link:hover {
+        color: #007aff;
+     
+    }
+
+    /* Eye Icon Section - Positioned at top-left */
+    .service-box {
+        position: fixed;
+        top: 100px; /* Increased space above to avoid overlap with nav links */
+        left: 20px;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 60px;
+    }
+
+    .icon-video {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid #007aff;
+        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+        overflow: hidden;
+    }
+
+    /* Box Intro Section */
+    .box-intro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        text-align: center;
+    }
+
+    .box-headline {
+        font-size: 150px;
+        line-height: 1.4;
+        color: #333;
+    }
+
+    .box-intro h5 {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 10px;
+        color: #ff0000;
+    }
+
+
     
-            // Apply the new position to the eye icon
-            const serviceBox = document.querySelector('.service-box');
-            serviceBox.style.left = `${randomX}px`;
-            serviceBox.style.top = `${randomY}px`;
-        }
-    
-        // Move the eye icon every 3 seconds
-        setInterval(randomPosition, 3000); // Adjust interval time (3000ms = 3 seconds)
-    
-        // Call it once to position the icon initially
-        randomPosition();
-    </script>
-    
-    <style>
-        /* Importing the Poppins font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-    
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    
-        .framer-container {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 12px 20px;
-            position: relative;
-            border-radius: 20px;
-            margin: 10px auto;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            max-width: 1000px;
-        }
-    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .framer-links {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
+            flex-direction: row;
+            justify-content: center;
+         
         }
-    
+        @media (max-width: 767px) {
+    .framer-container {
+        max-width: 350px; /* For phones and small tablets */
+    }
+}
+
+
         .framer-link {
-            font-size: 16px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.2s ease;
-            padding: 8px 12px;
-            border-radius: 12px;
+            font-size: 10px;
+            padding: 8px 16px;
         }
-    
-        .framer-link:hover {
-            color: #007aff;
-            background-color: rgba(0, 122, 255, 0.1);
-            transform: translateY(-2px);
-        }
-    
-        /* Eye Icon Section - Positioned at top-left */
+
         .service-box {
-            position: fixed;
-            top: 80px; /* Increased space above to avoid overlap with nav links */
-            left: 20px;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
+            top: 120px;
         }
-    
+
         .icon-video {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 2px solid #007aff;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
-            overflow: hidden;
+            width: 50px;
+            height: 50px;
         }
-    
-        /* Box Intro Section */
-        .box-intro {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full viewport height */
+
+        .box-intro .table-cell {
+            padding: 0px;
             text-align: center;
         }
-    
+
         .box-headline {
-            font-size: 48px;
-            line-height: 1.4;
+            font-size: 65px;
         }
-    
+
         .box-intro h5 {
-            font-size: 20px;
-            font-weight: 400;
-            margin-top: 10px;
-            color: #555;
+            font-size: 14px;
         }
-    
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .framer-links {
-                flex-direction: row;
-                justify-content: center;
-                gap: 10px;
-                font-size: 14px; /* Reduce the font size */
-            }
-    
-            .framer-link {
-                font-size: 14px; /* Adjust link font size */
-                padding: 6px 10px; /* Adjust padding */
-            }
-    
-            .service-box {
-                top: 100px; /* Adjust position further down */
-            }
-    
-            .icon-video {
-                width: 50px;
-                height: 50px;
-            }
-    
-            .box-intro .table-cell {
-                padding: 10px;
-                text-align: center;
-            }
-    
-            .box-headline {
-                font-size: 32px;
-            }
-    
-            .box-intro h5 {
-                font-size: 14px;
-            }
+    }
+
+    @media (max-width: 480px) {
+        .framer-link {
+            font-size: 13px;
+            padding: 0px;
         }
-    
-        @media (max-width: 480px) {
-            /* Further reduce sizes for smaller screens */
-            .framer-link {
-                font-size: 12px;
-                padding: 6px;
-            }
-    
-            /* Eye Icon size adjustment */
-            .icon-video {
-                width: 50px;
-                height: 50px;
-            }
-    
-            .box-headline {
-                font-size: 24px;
-            }
-    
-            .box-intro h5 {
-                font-size: 12px;
-            }
-    
-            .mouse .scroll {
-                width: 30px;
-                height: 30px;
-            }
+
+        /* Eye Icon size adjustment */
+        .icon-video {
+            width: 50px;
+            height: 50px;
         }
-    </style>
+
+        .box-headline {
+            font-size: 65px;
+        }
+
+        .box-intro h5 {
+            font-size: 12px;
+        }
+
+        .mouse .scroll {
+            width: 10px;
+            height: 10px;
+        }
+    }
     
+</style>
+
     
   <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
 
@@ -324,7 +631,7 @@
 }
 
 .card {
-    background-color: #1c1c1e;
+    background-color: #0011ff9a;
     border-radius: 28px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -364,7 +671,7 @@
 }
 
 .card-description {
-    color: #a0a0a0;
+    color: #052419;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -536,7 +843,7 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         color: #fff;
-        background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background for headline */
+        background: linear-gradient(to right, #ef3f37, #fbaf41); /* Gradient background for headline */
         padding: 10px 25px;
         border-radius: 30px; /* Rounded corners */
     }
@@ -777,7 +1084,7 @@
             margin-top: 100px;
             margin-bottom: 100px;
             padding: 20px;
-            background: #f9f9f9;
+            background: #ffffff;
             border-radius: 24px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
@@ -796,8 +1103,8 @@
             display: inline-block;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #fff;
-            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #ffffff;
+            background: linear-gradient(135deg,#fbaf41, #ef3f37 );
             padding: 12px 24px;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -853,29 +1160,33 @@
     </style>
 
     <div class="iphone-style-row">
+
+
+ <!-- Video item -->
+           <div class="iphone-style-col">
+    <div class="iphone-style-iframe-container">
+        <iframe src="https://www.youtube.com/embed/r_P95CMoqu8?si=MMR66FE686QSJFdo" allowfullscreen></iframe>
+    </div>
+</div>
         <!-- Video item -->
         <div class="iphone-style-col">
             <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/VB2eipM-3WQ?si=iNWo2bELDDZ3MPmB" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Repeat -->
-        <div class="iphone-style-col">
-            <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
-            </div>
-        </div>
+
+
 
         <div class="iphone-style-col">
             <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nBru5_PheQ8?si=ykMtO31MsJlvVLap" allowfullscreen></iframe>
             </div>
         </div>
 
         <div class="iphone-style-col">
             <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+                <iframe src="" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -887,7 +1198,7 @@
 
         <div class="iphone-style-col">
             <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/3obeUaJoBds?si=w4qhYUpPLkYwuqKI" allowfullscreen></iframe>
+                <iframe src="" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -1032,7 +1343,7 @@
 }
 
 .email-link {
-    color: #76C7FF;
+    color: #052419 ;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
@@ -1155,7 +1466,7 @@
 }
 
 .faq-question:hover {
-    background-color: #efefef;
+    background-color: #fbaf41;
     transform: translateY(-2px);
 }
 
@@ -1168,7 +1479,7 @@
     display: none;
     padding: 15px 25px; /* Keeping padding as it was */
     background-color: #f1f1f1;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid  #fbaf41;
     margin-top: 10px;
     border-radius: 8px;
     font-size: 2rem; /* Larger text font size */
