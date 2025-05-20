@@ -314,39 +314,68 @@
 <div class="card-container">
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
-                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
-            </svg>
+         <video 
+  src="https://cdn-icons-mp4.freepik.com/512/19003/19003148.mp4" 
+  autoplay 
+  loop 
+  muted 
+  playsinline 
+  style="width: 100px; height: 100px;"
+></video>
+
         </div>
         <div class="card-content">
-            <h3 class="card-title">Retention Based Editing</h3>
-            <p class="card-description">I edit videos to maximize retention and engagement rates.</p>
+            <h3 class="card-title">Edit with Purpose</h3>
+            <p class="card-description">Every frame is cut with purpose — to keep your audience watching 'til the very end.</p>
         </div>
         <div class="gradient-background"></div>
     </div>
 
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
-                <path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"></path>
-            </svg>
+           <img id="icon" src="https://cdn-icons-png.freepik.com/512/5436/5436970.png?uid=R154943924&ga=GA1.1.1727356045.1747590358" style="width:100px; height:100px;" alt="icon">
+
+<script>
+  const icons = [
+    "https://cdn-icons-png.freepik.com/512/5436/5436970.png?uid=R154943924&ga=GA1.1.1727356045.1747590358",
+    "https://cdn-icons-png.freepik.com/512/5968/5968428.png?uid=R154943924&ga=GA1.1.1727356045.1747590358",
+    "https://cdn-icons-png.freepik.com/512/5611/5611084.png?uid=R154943924&ga=GA1.1.1727356045.1747590358",
+    "https://cdn-icons-png.freepik.com/512/5968/5968520.png?uid=R154943924&ga=GA1.1.1727356045.1747590358",
+    "https://cdn-icons-png.freepik.com/512/5611/5611037.png?uid=R154943924&ga=GA1.1.1727356045.1747590358"
+  ];
+
+  let index = 0;
+  const imgElement = document.getElementById('icon');
+
+  setInterval(() => {
+    index = (index + 1) % icons.length;
+    imgElement.src = icons[index];
+  }, 3000); // Change every 3000 milliseconds = 3 seconds
+</script>
+
         </div>
         <div class="card-content">
-            <h3 class="card-title">Premium Visuals</h3>
-            <p class="card-description">Animations are custom-made and unique to your style. Program used: Adobe After Effects, Premiere Pro, Photoshop.</p>
+            <h3 class="card-title">Unique Visuals</h3>
+            <p class="card-description">No templates. Just original animations that match your tone and style, built in After Effects, Premiere Pro, and Photoshop.</p>
         </div>
         <div class="gradient-background"></div>
     </div>
 
     <div class="card">
         <div class="card-header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fafafa">
-                <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
-            </svg>
+          <video 
+  src="https://cdn-icons-mp4.freepik.com/512/14251/14251483.mp4" 
+  autoplay 
+  loop 
+  muted 
+  playsinline 
+  style="width: 100px; height: 100px;"
+></video>
+
         </div>
         <div class="card-content">
-            <h3 class="card-title">Love & Care</h3>
-            <p class="card-description">I put love and care into each edit. No half-assing. Only work I am proud of.</p>
+            <h3 class="card-title">Built with Intention</h3>
+            <p class="card-description">No filler. Just storytelling that hits.</p>
         </div>
         <div class="gradient-background"></div>
     </div>
@@ -366,7 +395,7 @@
 }
 
 .card {
-    background-color: #0011ff9a;
+    background-color: #ffffff9a;
     border-radius: 28px;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -375,7 +404,7 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #333;
+    border: 2px solid #fbaf41;
     flex: 1 1 calc(100% - 40px);
 }
 
@@ -390,17 +419,12 @@
     margin-bottom: 20px;
 }
 
-.card-header svg {
-    width: 48px;
-    height: 48px;
-}
-
 .card-content {
     text-align: center;
 }
 
 .card-title {
-    color: #fafafa;
+    color: #000000;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -436,8 +460,8 @@
 }
 
 .book-call-btn {
-    background-color: #6B67CF;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
     padding: 14px 32px;
     text-decoration: none;
     font-size: 16px;
@@ -445,10 +469,11 @@
     border-radius: 40px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fbaf41;
 }
 
 .book-call-btn:hover {
-    background-color: #4f48b6;
+    background-color: #0011ff9a;
     transform: translateY(-3px);
 }
 
@@ -497,7 +522,7 @@
         font-size: 36px;
         font-weight: 600;
         margin-bottom: 20px;
-        color: #333;
+        color: #052419 ;
     }
 
     /* Shared styles for carousel containers */
@@ -578,7 +603,7 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         color: #fff;
-        background: linear-gradient(to right, #ef3f37, #fbaf41); /* Gradient background for headline */
+        background: linear-gradient(to right, #ef4037b4, #fbaf41); /* Gradient background for headline */
         padding: 10px 25px;
         border-radius: 30px; /* Rounded corners */
     }
@@ -838,11 +863,12 @@
             display: inline-block;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #ffffff;
-            background: linear-gradient(135deg,#fbaf41, #ef3f37 );
+            color: #000000;
+            background: white;
             padding: 12px 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;  
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #fbaf41;
         }
 
         /* Portfolio grid */
