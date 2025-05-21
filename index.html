@@ -397,7 +397,7 @@
 .card {
     background-color: #ffffff9a;
     border-radius: 28px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 340px;
     padding: 28px;
@@ -410,7 +410,8 @@
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 16px 48px rgba(251, 175, 65, 0.7);
+
 }
 
 .card-header {
@@ -468,12 +469,12 @@
     font-weight: 600;
     border-radius: 40px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 8px rgba(251, 175, 65, 0.7);
     border: 2px solid #fbaf41;
 }
 
 .book-call-btn:hover {
-    background-color: #0011ff9a;
+    background-color: #0011ff15;
     transform: translateY(-3px);
 }
 
@@ -498,7 +499,7 @@
     }
 
     .book-call-btn {
-        width: 90%;
+        width: 40%;
         text-align: center;
     }
 }
@@ -508,320 +509,177 @@
 
   <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
 
-        
-        
-<!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
-<style>
-    section {
-        padding: 60px 20px; /* Reduced padding for a more compact look */
-        text-align: center;
-    
-    }
+        <style>
+.carousel1-container {
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 30px 0px;
+  background: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  
+}
 
-    h2 {
-        font-size: 36px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: #052419 ;
-    }
+.carousel1-track {
+  display: flex;
+  gap: 28px;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
 
-    /* Shared styles for carousel containers */
-    .carousel-container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        margin: 0 auto;
-        border-radius: 25px; /* Rounded corners for sleek look */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
-    }
+.carousel1-card {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 6px 8px rgba(251, 175, 65, 0.7);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 2px solid #fbaf41;
+}
 
-    /* First carousel styles */
-    .carousel-track.creators-worked,
-    .carousel-track.my-results {
-        display: flex;
-        gap: 20px;
-        will-change: transform;
-    }
+.carousel1-card:hover,
+.carousel1-card:focus-visible {
+  transform: scale(1.07);
+  box-shadow: 0 8px 12px rgba(251, 175, 65, 0.7);
+  outline: none;
+}
 
-    /* Card styles for carousel items */
-    .creators-worked-card,
-    .my-results-card {
-        flex: 0 0 auto;
-        width: 230px;
-        border: 2px solid #e0e0e0;
-        border-radius: 18px; /* Rounded corners for each card */
-        overflow: hidden;
-        background: #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
-        transition: transform 0.3s ease; /* Smooth hover effect */
-    }
+.carousel1-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: block;
+}
 
-    .creators-worked-card:hover,
-    .my-results-card:hover {
-        transform: translateY(-5px); /* Subtle hover effect */
-    }
+.carousel1-info {
+  padding: 18px 24px;
+  text-align: center;
+}
 
-    .creators-worked-card img,
-    .my-results-card img {
-        width: 100%;
-        height: 170px; /* Adjust image height */
-        object-fit: cover;
-        border-bottom: 2px solid #f0f0f0; /* Line between image and text */
-    }
+.carousel1-name {
+  font-weight: 800;
+  font-size: 22px;
+  color: #1e62d0;
+  margin-bottom: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .creators-worked-info,
-    .my-results-info {
-        padding: 12px;
-    }
+.carousel1-followers {
+  font-size: 16px;
+  color: #5b6770;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
 
-    .creators-worked-name,
-    .my-results-name {
-        font-size: 18px;
-        color: #333;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .creators-worked-followers,
-    .my-results-followers {
-        font-size: 16px;
-        color: #555;
-    }
-
-    /* Headline styles */
-    .custom-box-headline {
-        font-size: 40px;
-        font-weight: 700;
-        text-align: center;
-        color: #333;
-        margin-bottom: 30px;
-    }
-
-    .custom-box-headline span {
-        font-family: "Poppins", sans-serif;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #fff;
-        background: linear-gradient(to right, #ef4037b4, #fbaf41); /* Gradient background for headline */
-        padding: 10px 25px;
-        border-radius: 30px; /* Rounded corners */
-    }
+.carousel1-headline {
+  font-size: 40px;
+  font-weight: 900;
+  color: #1e62d0;
+  text-align: center;
+  padding: 0px 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 </style>
 
-<!-- First Carousel -->
-<section>
-    <h1 class="custom-box-headline">
-        <span>Clients</span>
-    </h1>
-    
-    <div class="carousel-container">
-        <div class="carousel-track creators-worked">
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            <!-- Add more creators here -->
+<section style="padding-top: 100px; padding-bottom: 100px;">
+  <h2 class="carousel1-headline">Project Results</h2>
+  <div class="carousel1-container" id="carousel1">
+    <div class="carousel1-track" id="carousel1-track">
 
-
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/GG1wuHLuwtAABbzIdRhaytx21y0.jpg" alt="Dan Kieft">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Dan Kieft</div>
-                    <div class="creators-worked-followers">42K Subs</div>
-                </div>
-            </div>
-            <div class="creators-worked-card">
-                <img src="https://framerusercontent.com/images/jP1DK6m8fBPGoiwgKBL8hDx3LU.jpeg" alt="Coach Kyle">
-                <div class="creators-worked-info">
-                    <div class="creators-worked-name">Coach Kyle</div>
-                    <div class="creators-worked-followers">1M Followers</div>
-                </div>
-            </div>
-            
+      <div class="carousel1-card">
+        <img src="https://framerusercontent.com/images/HLmLXj0EmNQ4mZsihTYjS4rvnk4.jpg" alt="Alice Smith" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Alice Smith</div>
+          <div class="carousel1-followers">350K Followers</div>
         </div>
+      </div>
+
+      <div class="carousel1-card">
+        <img src="https://framerusercontent.com/images/1K0FzF0EFNUeZ68B0TgOAZNrfL0.jpg" alt="Mark Johnson" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Mark Johnson</div>
+          <div class="carousel1-followers">120K Followers</div>
+        </div>
+      </div>
+
+      <div class="carousel1-card">
+        <img src="https://framerusercontent.com/images/fJ27oI4mAqiTqhhZwAhAYfSqFqQ.jpg" alt="Emma Davis" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Emma Davis</div>
+          <div class="carousel1-followers">210K Followers</div>
+        </div>
+      </div>
+
+      <div class="carousel1-card">
+        <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="John Carter" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">John Carter</div>
+          <div class="carousel1-followers">180K Followers</div>
+        </div>
+      </div>
+
+      <div class="carousel1-card">
+        <img src="https://framerusercontent.com/images/G1nPe8CksXnM4P2Tl9OJqC1RuJQ.jpg" alt="Sophia Lee" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Sophia Lee</div>
+          <div class="carousel1-followers">270K Followers</div>
+        </div>
+      </div>
+
+        <div class="carousel1-card">
+        <img src="https://framerusercontent.com/images/G1nPe8CksXnM4P2Tl9OJqC1RuJQ.jpg" alt="Sophia Lee" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Sophia Lee</div>
+          <div class="carousel1-followers">270K Followers</div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<!-- Second Carousel -->
-<section>
-    <h2 class="custom-box-headline">
-        <span>My Results</span>
-    </h2>
-    
-    <div class="carousel-container">
-        <div class="carousel-track my-results">
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-            <div class="my-results-card">
-                <img src="https://framerusercontent.com/images/uw3JR9PrDdlVWRCsuyD3IFYs4os.jpg" alt="Other Creator">
-                <div class="my-results-info">
-                    <div class="my-results-name">Other Creator</div>
-                    <div class="my-results-followers">900K Subs</div>
-                </div>
-            </div>
-            <!-- Add more results here -->
-        </div>       
-    </div>
-</section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
-    function initCarousel(selector, speed) {
-        const track = document.querySelector(selector);
-        const totalWidth = track.scrollWidth;
+function autoScrollCarousel(trackSelector, speed = 0.5) {
+  const track = document.querySelector(trackSelector);
+  const cards = Array.from(track.children);
 
-        gsap.to(track, {
-            x: `-${totalWidth}`,
-            duration: totalWidth / speed,
-            ease: "none",
-            repeat: -1,
-            modifiers: {
-                x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-            }
-        });
+  // Clone all cards once to create seamless loop
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  const totalWidth = track.scrollWidth / 2; // width of one set (original cards)
+
+  let position = 0;
+
+  function animate() {
+    position += speed;
+    if (position >= totalWidth) {
+      position = 0;
     }
+    track.style.transform = `translate3d(${-position}px, 0, 0)`;
+    requestAnimationFrame(animate);
+  }
 
-    initCarousel('.creators-worked', 50);
-    initCarousel('.my-results', 30);
+  animate();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  autoScrollCarousel(".carousel1-track", 0.5); // Adjust speed here
+});
+
 </script>
 
+
+        
+<!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
 
 <!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel-->
 
@@ -841,12 +699,12 @@
     <style>
         /* Section wrapper */
         .iphone-style-section-wrapper {
-            margin-top: 100px;
+
             margin-bottom: 100px;
             padding: 20px;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: transparent;
+            border-radius: 0px;
+            box-shadow: none;
         }
 
         /* Headline */
@@ -857,19 +715,36 @@
             color: #222;
             font-family: 'Inter', sans-serif;
             margin-bottom: 40px;
+            
         }
 
-        .iphone-style-headline span {
-            display: inline-block;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #000000;
-            background: white;
-            padding: 12px 24px;
-            border-radius: 12px;  
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            border: 2px solid #fbaf41;
-        }
+  .iphone-style-headline span {
+    display: inline-block;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 2px solid #fbaf41;
+    background: linear-gradient(270deg, #4a90e2, #fbaf41, #ef4037b4);   
+    background-size: 600% 600%;
+    animation: iphoneGradientMove 6s ease infinite;
+    box-shadow: 0 6px 8px rgba(251, 175, 65, 0.7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes iphoneGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
         /* Portfolio grid */
         .iphone-style-row {
@@ -900,7 +775,8 @@
             overflow: hidden;
             border-radius: 20px;
             background: #000;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 12px rgba(251, 175, 65, 0.7);
+            border: 5px solid #fbaf41;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -912,11 +788,12 @@
             height: 100%;
             border: none;
             border-radius: 20px;
+            
         }
 
         .iphone-style-iframe-container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 16px 16px rgba(251, 175, 65, 0.7);
         }
     </style>
 
@@ -1013,15 +890,15 @@
             <h3 class="uppercase">Hi, I'm Jomiruu</h3>
             <h5>The Enthusiastic Guy</h5>
             <p class="text-experience">
-                A Video Editor, Graphic Designer, Content Creator, and Motion Graphics Artist. 
-                I absolutely love what I do. It's been years since I started dreaming of becoming a freelance editor. 
-                It's been a tough process, but I finally figured out how to keep going.
+              Video Editor / Motion Graphics Artist. Focusing on one thing has driven me to achieve greater results.
+               It's been a tough process, but I finally figured it out.
             </p>
             <p class="text-experience">
-                With years of practice and experience, I’ve learned to use software like Adobe Photoshop, After Effects, 
-                and Illustrator by watching tutorials on YouTube, Skillshare, and Patreon. From being a perfectionist to 
-                learning to work independently, I can now take on more projects. Practice, experience, and discipline 
-                make everything fall into place. Every 1% matters!
+               With years of practice and experience, using software like Adobe Photoshop,
+               After Effects, and Illustrator, and by watching tutorials on YouTube, Skillshare, and Patreon 
+               — Practice happens along the way. Practice, experience, and discipline make everything fall into place.
+               Every 1% matters!
+                
             </p>
 
             <!-- Social Links -->
@@ -1103,6 +980,14 @@
     letter-spacing: 2px;
 }
 
+
+ h2 {
+        font-size: 25px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #052419 ;
+    }
+    
 .email-link {
     color: #052419 ;
     text-decoration: none;
