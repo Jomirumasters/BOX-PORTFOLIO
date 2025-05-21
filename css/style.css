@@ -1110,20 +1110,6 @@ footer img {
 /* New Code for Changing Colors */
 
 /* Style for h3: "Hi, I'm Jomil Raymundo" */
-h3.uppercase {
-    font-size: 32px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-top: -5px; /* Adjust this to bring it up - you can modify the value as needed */
-    color: #333; /* Default color for h3 - change this to your desired color */
-}
-
-/* Style for h5: "Enthusiastic" */
-h5 {
-    font-size: 20px;
-    font-weight: 500;
-    color: #fbaf41; /* Default color for h5 - change this to your desired color */
-}
 
 /* Style for specific <p> elements */
 p.text-intro {

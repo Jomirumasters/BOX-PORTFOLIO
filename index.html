@@ -382,7 +382,7 @@
 </div>
 
 <div class="button-container">
-    <a href="your-link-here" class="book-call-btn">Book a call</a>
+    <a href="#Jomiruu" class="book-call-btn">Book a call</a>
 </div>
 
 <style>
@@ -639,20 +639,60 @@
   user-select: none;
   box-shadow: 0 0 8px rgba(251, 175, 65, 0.7);
 }
+
+
+.carousel1-socials {
+  margin-top: 10px;
+}
+
+.social-icon {
+  margin-right: 15px;
+  font-size: 28px; /* Make icons bigger */
+  color: #444;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.social-icon:first-child:hover {
+  color: #e1306c; /* Instagram color */
+}
+
+.social-icon:last-child:hover {
+  color: #ff0000; /* YouTube red */
+}
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <section id="results" style="padding-top: 100px; padding-bottom: 100px;">
   <h2 class="carousel1-headline">Project Results</h2>
   <div class="carousel1-container" id="carousel1">
     <div class="carousel1-track" id="carousel1-track">
 
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="Alice Smith" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Nate</div>
-          <div class="carousel1-followers">350K Followers</div>
-        </div>
-      </div>
+<div class="carousel1-card">
+  <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="Alice Smith" class="clickable-img" />
+  <div class="carousel1-info">
+    <div class="carousel1-name">
+      <a href="https://www.instagram.com/nathan.to__/" target="_blank">Nate</a>
+    </div>
+    <div class="carousel1-followers">23.7k Followers</div>
+
+    <!-- Bigger Social Icons -->
+    <div class="carousel1-socials">
+      <a href="https://www.instagram.com/nathan.to__/" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@nathan" target="_blank" class="social-icon">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+
 
       <div class="carousel1-card">
         <img src="img/CLIENT IMG/CLIENT 2.jpg" alt="Mark Johnson" class="clickable-img" />
@@ -740,9 +780,19 @@ function autoScrollCarousel(trackSelector, speed = 0.5) {
   function animate() {
     position += speed;
     if (position >= totalWidth) {
+      // Reset position instantly without delay/jump
       position = 0;
+      track.style.transition = 'none'; // Remove transition for reset
+      track.style.transform = `translate3d(${-position}px, 0, 0)`;
+
+      // Force reflow to apply styles immediately
+      void track.offsetWidth;
+
+      // Restore transition for smooth scrolling again
+      track.style.transition = '';
+    } else {
+      track.style.transform = `translate3d(${-position}px, 0, 0)`;
     }
-    track.style.transform = `translate3d(${-position}px, 0, 0)`;
     requestAnimationFrame(animate);
   }
 
@@ -770,13 +820,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.classList.remove('active');
   });
 
-  // Close lightbox if clicking outside the image
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove('active');
     }
   });
 });
+
 </script>
   
 <!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
@@ -870,10 +920,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .iphone-style-iframe-container {
             position: relative;
             width: 100%;
-            padding-bottom: 50%;
+            padding-bottom: 60%;
             height: 0;
             overflow: hidden;
-            border-radius: 35px;
+            border-radius: 12px;
             background: #000000;
             box-shadow: 0 12px 12px rgba(251, 175, 65, 0.7);
             border: 2px solid #fbaf41;
