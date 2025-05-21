@@ -91,7 +91,7 @@
     
 
     <!-- Eye Icon Section (Fixed, top-left) -->
-    <div class="service-box">
+    <div class="service-box"  >
         <a href="#Jomiruu">
             <video autoplay loop muted class="icon-video">
                 <source src="https://cdn-icons-mp4.flaticon.com/512/11184/11184155.mp4" type="video/mp4">
@@ -100,7 +100,7 @@
     </div>
 
     <!-- Box Intro Section (Centered) -->
-    <section class="box-intro">
+    <section id="Home" class="box-intro">
         <div class="table-cell">
             <h1 class="box-headline letters rotate-2">
                 <span class="box-words-wrapper">
@@ -953,8 +953,10 @@ document.addEventListener("DOMContentLoaded", () => {
   <header class="header-container">
     <h2 class="heading">
       <span class="main-heading">Work with me!</span><br />
-      Email me at
-     <a href="mailto:jomilraymundo8@gmail.com">jomilraymundo8@gmail.com</a>
+   
+      <a href="mailto:jomilraymundo8@gmail.com" class="email-link"
+        >JOMILRAYMUNDO8@GMAIL.COM</a
+      >
     </h2>
   </header>
 
@@ -1014,7 +1016,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Text Section -->
     <div class="text-section">
-      <h3 class="uppercase" tabindex="0">Hi, I'm Jomiruu</h3>
+      <h2 class="uppercase" tabindex="0">Hi, I'm Jomiruu</h2>
       <h5>The Enthusiastic Guy</h5>
       <p class="text-experience">
         Video Editor / Motion Graphics Artist. Focusing on one thing has
@@ -1171,11 +1173,9 @@ document.addEventListener("DOMContentLoaded", () => {
     --primary-color-hover: #ff5733;
     --text-color-dark: #052419;
     --text-color-light: #333;
-    --background-light: #fafafa;
-    --background-faq: #fff;
     --shadow-color: rgba(251, 175, 65, 0.7);
-    --font-family: "Satoshi", Arial, sans-serif;
-    --font-family-alt: "Inter", Arial, sans-serif;
+    --font-family-alt: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
   }
 
   /* Container styles for both sections */
@@ -1185,7 +1185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     padding: 40px 20px;
     border-radius: 20px;
    
-    font-family: 'Satoshi', Arial, sans-serif;
+     --font-family-alt: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
     color: #052419;
 
@@ -1202,27 +1202,22 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Header */
   .header-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
 
   .heading {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 100px;
     line-height: 1.4;
+    padding: 0px;
   }
 
   .main-heading {
     text-transform: uppercase;
     letter-spacing: 2px;
+
   }
 
-  .email-link {
-    color: var(--text-color-dark);
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
 
   .email-link:hover,
   .email-link:focus {
@@ -1235,12 +1230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     outline-offset: 2px;
   }
 
-  .email-font {
-    font-family: var(--font-family-alt);
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
+
 
   /* Content Body */
   .content-body {
@@ -1259,11 +1249,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   .image-section img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s ease;
     box-shadow: 0 12px 18px rgba(251, 175, 65, 0.7);
-    outline: 3px solid var(--primary-color);
+    outline: 2px solid var(--primary-color);
   }
 
   .image-section img:hover,
@@ -1283,20 +1273,21 @@ document.addEventListener("DOMContentLoaded", () => {
   .uppercase {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 35px;
     margin-bottom: 4px;
     outline-offset: 3px;
   }
 
   h5 {
     font-weight: 600;
-    margin-bottom: 12px;
-    font-family: var(--font-family-alt);
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .text-experience {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 28px;
     margin-bottom: 16px;
     line-height: 1.5;
   }
@@ -1397,6 +1388,21 @@ document.addEventListener("DOMContentLoaded", () => {
       max-width: 100%;
     }
   }
+
+  .email-link {
+  color: var(--text-color-dark);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .email-link {
+    font-size: 18px;
+  }
+}
+
 </style>
 
 <script>
