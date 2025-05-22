@@ -523,10 +523,13 @@
 
 .carousel1-track {
   display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
   gap: 28px;
   will-change: transform;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+
 }
 
 .carousel1-card {
@@ -577,12 +580,23 @@
 }
 
 .carousel1-headline {
-  font-size: 40px;
-  font-weight: 900;
-  color: #1e62d0;
-  text-align: center;
-  padding: 0px 0px;
+  font-size: 28px; /* reduced from 40px */
+  font-weight: 900; /* slightly lighter for balance */
+  color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px; /* slightly smaller padding */
+  border-radius: 10px;
+  border: 2px solid #fbaf41;
+  background: linear-gradient(270deg, #4a90e2, #fbaf41, #ef4037b4);
+  background-size: 600% 600%;
+  animation: iphoneGradientMove 6s ease infinite;
+  box-shadow: 0 5px 7px rgba(251, 175, 65, 0.7);
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 /* Lightbox styles */
@@ -666,55 +680,88 @@
 
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <section id="results" style="padding-top: 100px; padding-bottom: 100px;">
-  <h2 class="carousel1-headline">Project Results</h2>
+  <h2 class="carousel1-headline">Results / Clients</h2>
   <div class="carousel1-container" id="carousel1">
     <div class="carousel1-track" id="carousel1-track">
 
-<div class="carousel1-card">
-  <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="Alice Smith" class="clickable-img" />
-  <div class="carousel1-info">
-    <div class="carousel1-name">
-      <a href="https://www.instagram.com/nathan.to__/" target="_blank">Nate</a>
-    </div>
-    <div class="carousel1-followers">23.7k Followers</div>
+      <div class="carousel1-card">
+        <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="Alice Smith" class="clickable-img" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">
+            <a href="https://www.instagram.com/nathan.to__/" target="_blank">Nate</a>
+          </div>
+          <div class="carousel1-followers">23.7k Followers</div>
+          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
+            Agency owner
+          </div>
+          <div class="carousel1-socials">
+            <a href="https://www.instagram.com/ariavisualsproduction/" target="_blank" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+           
+          </div>
+        </div>
+      </div>
 
-    <!-- Bigger Social Icons -->
+      <div class="carousel1-card">
+        <img src="img/CLIENT IMG/CLIENT 2.jpg" alt="Mark Johnson" class="clickable-img" />
+        <div class="carousel1-info">
+          <div class="carousel1-name">Nick</div>
+          <div class="carousel1-followers">5,720 Followers</div>
+          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
+           7 Figure seller on Amazon 🚀
+          </div>
+          <div class="carousel1-socials">
+            <a href="https://www.instagram.com/nick.guerrero_/" target="_blank" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@Nick.guerrero" target="_blank" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+<div class="carousel1-card">
+  <img src="img/CLIENT IMG/CLIENT 3.jpg" alt="Emma Davis" class="clickable-img" />
+  <div class="carousel1-info">
+    <div class="carousel1-name">Harry</div>
+    <div class="carousel1-followers">78,179 Followers</div>
+    <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
+      High-Performance Coach 🚀
+    </div>
     <div class="carousel1-socials">
-      <a href="https://www.instagram.com/nathan.to__/" target="_blank" class="social-icon">
+      <a href="https://www.instagram.com/harrykarydes/" target="_blank" class="social-icon" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://www.youtube.com/@nathan" target="_blank" class="social-icon">
+      <a href="https://www.youtube.com/@harrykarydes" target="_blank" class="social-icon" aria-label="YouTube">
         <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/harry-karydes/" target="_blank" class="social-icon" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
       </a>
     </div>
   </div>
 </div>
 
 
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 2.jpg" alt="Mark Johnson" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Nick</div>
-          <div class="carousel1-followers">120K Followers</div>
-        </div>
-      </div>
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 3.jpg" alt="Emma Davis" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Harry</div>
-          <div class="carousel1-followers">210K Followers</div>
-        </div>
-      </div>
-
       <div class="carousel1-card">
         <img src="img/CLIENT IMG/CLIENT 4.jpg" alt="John Carter" class="clickable-img" />
         <div class="carousel1-info">
           <div class="carousel1-name">Chrys Tiu</div>
-          <div class="carousel1-followers">180K Followers</div>
+          <div class="carousel1-followers">853 Followers</div>
+          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
+            Online Coach
+          </div>
+          <div class="carousel1-socials">
+            <a href="https://www.instagram.com/iamchrystiu/" target="_blank" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@iamchrystiu/videos" target="_blank" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -723,9 +770,19 @@
         <div class="carousel1-info">
           <div class="carousel1-name">Chaz Carti</div>
           <div class="carousel1-followers">270K Followers</div>
+          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
+            Content Creator
+          </div>
+          <div class="carousel1-socials">
+            <a href="https://www.instagram.com/chazcartii/?hl=en" target="_blank" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@ChazCarti" target="_blank" class="social-icon" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -736,73 +793,45 @@
       <img src="" alt="Expanded Image" id="lightbox-img" />
     </div>
   </div>
- <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
-      <img src="" alt="Expanded Image" id="lightbox-img" />
-    </div>
-  </div>
-   <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
-      <img src="" alt="Expanded Image" id="lightbox-img" />
-    </div>
-  </div>
- <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
-      <img src="" alt="Expanded Image" id="lightbox-img" />
-    </div>
-  </div>
-   <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
-      <img src="" alt="Expanded Image" id="lightbox-img" />
-    </div>
-  </div>
 </section>
+
 
 <script>
 function autoScrollCarousel(trackSelector, speed = 0.5) {
   const track = document.querySelector(trackSelector);
   const cards = Array.from(track.children);
 
-  // Clone all cards once to create seamless loop
-  cards.forEach(card => {
-    const clone = card.cloneNode(true);
-    track.appendChild(clone);
-  });
-
-  const totalWidth = track.scrollWidth / 2; // width of one set (original cards)
+  // Clone all cards twice for continuous seamless loop
+  const cloneSet1 = cards.map(card => card.cloneNode(true));
+  const cloneSet2 = cards.map(card => card.cloneNode(true));
+  cloneSet1.forEach(clone => track.appendChild(clone));
+  cloneSet2.forEach(clone => track.appendChild(clone));
 
   let position = 0;
+  const singleSetWidth = track.scrollWidth / 3; // original set only
 
   function animate() {
     position += speed;
-    if (position >= totalWidth) {
-      // Reset position instantly without delay/jump
-      position = 0;
-      track.style.transition = 'none'; // Remove transition for reset
+
+    if (position >= singleSetWidth) {
+      // Seamlessly loop back to the same position in the cloned content
+      position -= singleSetWidth;
       track.style.transform = `translate3d(${-position}px, 0, 0)`;
-
-      // Force reflow to apply styles immediately
-      void track.offsetWidth;
-
-      // Restore transition for smooth scrolling again
-      track.style.transition = '';
     } else {
       track.style.transform = `translate3d(${-position}px, 0, 0)`;
     }
+
     requestAnimationFrame(animate);
   }
 
+  track.style.willChange = 'transform'; // performance boost
   animate();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   autoScrollCarousel(".carousel1-track", 0.5);
 
-  // Lightbox logic
+  // Lightbox logic (unchanged)
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.getElementById('lightbox-close');
@@ -826,8 +855,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 </script>
+
   
 <!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
 
