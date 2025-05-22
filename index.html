@@ -147,10 +147,7 @@
     /* Importing the Poppins font */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-    * {
- 
-    }
-
+   
     body {
         font-family: 'Poppins', sans-serif;
     
@@ -498,11 +495,22 @@
         font-size: 15px;
     }
 
+    /* Improved Book Call Button for phones */
     .book-call-btn {
-        width: 40%;
+        width: 50%;               /* Make it wider for easier tap */
+        max-width: 300px;         /* Max width so it doesn't get too big on wider phones */
         text-align: center;
+        font-size: 18px;          /* Slightly bigger text */
+        padding: 16px 0;          /* More vertical padding for finger tap */
+        border-radius: 30px;      /* Slightly smaller radius for balance */
+        box-shadow: 0 6px 12px rgba(251, 175, 65, 0.8); /* Slightly stronger shadow */
+        margin: 0 auto;           /* Center horizontally */
+        display: block;           /* Full width button */
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 }
+
+
 </style>
 
 
@@ -769,7 +777,7 @@
         <img src="img/CLIENT IMG/CLIENT 5.jpg" alt="Sophia Lee" class="clickable-img" />
         <div class="carousel1-info">
           <div class="carousel1-name">Chaz Carti</div>
-          <div class="carousel1-followers">270K Followers</div>
+          <div class="carousel1-followers">110K subscribers</div>
           <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
             Content Creator
           </div>
@@ -1254,49 +1262,49 @@ document.addEventListener("DOMContentLoaded", () => {
     --text-color-light: #333;
     --shadow-color: rgba(251, 175, 65, 0.7);
     --font-family-alt: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
   }
 
-  /* Container styles for both sections */
   .unified-section {
     max-width: 1100px;
-    margin: 60px auto 100px auto; /* Top spacing, bottom spacing for footer */
+    margin: 60px auto 100px auto;
     padding: 40px 20px;
     border-radius: 20px;
-   
-     --font-family-alt: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
     color: #052419;
+  }
 
-}
-
-  /* FAQ Section override background and colors */
-/* FAQ Section override background and colors */
-.faq-section.unified-section {
-
+  .faq-section.unified-section {
     color: #333;
+  }
 
-}
-
-  /* Header */
   .header-container {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    color: var(--primary-color);
   }
 
   .heading {
     font-weight: 700;
     font-size: 100px;
     line-height: 1.4;
-    padding: 0px;
+    padding: 0;
   }
 
   .main-heading {
     text-transform: uppercase;
     letter-spacing: 2px;
-
   }
 
+  .header-container .email-link {
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
   .email-link:hover,
   .email-link:focus {
@@ -1309,9 +1317,6 @@ document.addEventListener("DOMContentLoaded", () => {
     outline-offset: 2px;
   }
 
-
-
-  /* Content Body */
   .content-body {
     display: flex;
     gap: 30px;
@@ -1320,7 +1325,6 @@ document.addEventListener("DOMContentLoaded", () => {
     flex-wrap: wrap;
   }
 
-  /* Image Section */
   .image-section {
     flex: 1 1 300px;
     max-width: 800px;
@@ -1331,22 +1335,33 @@ document.addEventListener("DOMContentLoaded", () => {
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    box-shadow: 0 12px 18px rgba(251, 175, 65, 0.7);
+    box-shadow: 0 12px 18px var(--shadow-color);
     outline: 2px solid var(--primary-color);
   }
 
   .image-section img:hover,
   .image-section img:focus-visible {
-    
     transform: scale(1.03);
-    box-shadow: 0 12px 12px rgba(251, 175, 65, 0.7);
+    box-shadow: 0 12px 12px var(--shadow-color);
   }
 
-  /* Text Section */
   .text-section {
     flex: 1 1 350px;
     max-width: 600px;
     text-align: left;
+  }
+
+  .text-section h2.uppercase {
+    color: var(--text-color-dark);
+  }
+
+  .text-section h5 {
+    color: var(--primary-color);
+  }
+
+  .text-section p.text-experience:nth-of-type(1),
+  .text-section p.text-experience:nth-of-type(2) {
+    color: var(--text-color-dark);
   }
 
   .uppercase {
@@ -1354,14 +1369,13 @@ document.addEventListener("DOMContentLoaded", () => {
     font-weight: 700;
     font-size: 35px;
     margin-bottom: 4px;
-    outline-offset: 3px;
   }
 
   h5 {
     font-weight: 600;
     margin-bottom: 15px;
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family-alt);
   }
 
   .text-experience {
@@ -1371,7 +1385,6 @@ document.addEventListener("DOMContentLoaded", () => {
     line-height: 1.5;
   }
 
-  /* Social Links */
   .social-ul {
     display: flex;
     gap: 20px;
@@ -1392,13 +1405,12 @@ document.addEventListener("DOMContentLoaded", () => {
     outline-offset: 3px;
   }
 
-  /* FAQ Section */
   .faq-header {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 40px;
     text-align: center;
-    font-family: var(--font-family);
+    font-family: var(--font-family-alt);
     color: var(--primary-color);
   }
 
@@ -1420,7 +1432,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cursor: pointer;
     color: var(--text-color-dark);
     padding: 10px 0;
-    font-family: var(--font-family);
+    font-family: var(--font-family-alt);
   }
 
   .faq-question:focus-visible {
@@ -1452,10 +1464,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   .faq-answer:not([hidden]) {
-    max-height: 200px; /* enough for short answers */
+    max-height: 200px;
   }
 
-  /* Responsive */
+  /* RESPONSIVE ENHANCEMENTS */
+
   @media (max-width: 768px) {
     .content-body {
       flex-direction: column;
@@ -1466,23 +1479,65 @@ document.addEventListener("DOMContentLoaded", () => {
     .image-section {
       max-width: 100%;
     }
+
+    .heading {
+      font-size: 80px;
+    }
+
+    .uppercase {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    h5 {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .text-experience {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .header-container .email-link {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .text-section {
+      text-align: center;
+    }
+
+    .social-ul {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
-  .email-link {
-  color: var(--text-color-dark);
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+  @media (max-width: 600px) {
+    .faq-header {
+      font-size: 24px;
+    }
 
-@media (max-width: 600px) {
-  .email-link {
-    font-size: 18px;
+    .faq-question {
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      font-size: 16px;
+    }
+
+    .email-link {
+      font-size: 18px;
+    }
   }
-}
-
 </style>
+
 
 <script>
   function toggleAnswer(id) {
