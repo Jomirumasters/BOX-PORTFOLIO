@@ -1693,6 +1693,8 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
+
 </div>
 
 
@@ -1723,5 +1725,31 @@ document.addEventListener("DOMContentLoaded", () => {
     <script src="js/custom.js"></script>
 
 </body>
+
+
+<script>// Disable right-click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable F12 and common dev tools shortcuts
+document.addEventListener('keydown', e => {
+  if (e.key === 'F12') e.preventDefault();
+  if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) e.preventDefault();
+  if (e.ctrlKey && e.key === 'U') e.preventDefault();
+
+  // Disable copy, paste, cut, select all
+  if (e.ctrlKey && ['c', 'v', 'x', 'a'].includes(e.key.toLowerCase())) e.preventDefault();
+
+  // Disable text selection with Shift+Arrow keys
+  if (e.shiftKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown')) e.preventDefault();
+});
+
+// Prevent copy, paste, cut events triggered by mouse or other methods
+['copy', 'paste', 'cut'].forEach(evt =>
+  document.addEventListener(evt, e => e.preventDefault())
+);
+
+// Prevent text selection via mouse
+document.addEventListener('selectstart', e => e.preventDefault());
+</script>
 
 </html>
