@@ -74,20 +74,7 @@
     
    <div class="container-fluid">
     <!-- Header Section -->
-    <header class="box-header">
-        <div class="framer-container">
-            <nav class="framer-nav">
-        
-                <div class="framer-links">
-                    <a href="#Home" class="framer-link">Home</a>
-                    <a href="#results" class="framer-link">Results</a>
-                    <a href="#Projects" class="framer-link">My Edits</a>
-                    <a href="#Jomiruu" class="framer-link">Jomiruu</a>
-                    <a href="#faqs" class="framer-link">FAQ</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+ 
     
 
     <!-- Eye Icon Section (Fixed, top-left) -->
@@ -305,92 +292,57 @@
     
 </style>
 
-
-<section class="verse-section">
-  <h2>Trust Beyond Reason</h2>
-  <p>
-    "Trust in the Lord with all your heart and lean not on your own understanding."
-    <span class="reference">– Proverbs 3:5</span>
-  </p>
-  <p>
-   Life gets messy, and it’s easy to rely on what we know. 
-   But trusting God fully means letting go of trying to understand everything ourselves.
-   When we do that, we find real peace and guidance beyond what we can see.
-  </p>
-</section>
-
 <style>
-  .verse-section {
+.big-quote-section {
   font-family: 'Poppins', sans-serif;
-  background: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  padding: 4rem; /* Larger padding */
-  max-width: 1000px; /* Even wider max width */
   text-align: center;
-  margin: 4rem auto;
-  transition: all 0.3s ease;
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.verse-section h2 {
-  font-size: 2.5rem; /* Big headline */
-  color: #222222;
+.big-quote {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
   margin-bottom: 2rem;
 }
 
-.verse-section p {
-  font-size: 1.5rem; /* Large, comfy body text */
-  color: #444444;
-  line-height: 2; /* More space between lines */
-  margin-bottom: 1rem;
-}
-
-.verse-section .reference {
-  display: block;
-  margin-top: 2rem;
-  font-weight: 600;
+.quote-reference {
+  font-size: 1.5rem;
   color: #4CAF50;
-  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-/* Responsive adjustments for tablets and smaller screens */
 @media (max-width: 768px) {
-  .verse-section {
-    padding: 3rem;
-    margin: 2rem auto;
-    max-width: 90%;
+  .big-quote {
+    font-size: 2.2rem;
   }
 
-  .verse-section h2 {
-    font-size: 2rem;
-  }
-
-  .verse-section p {
+  .quote-reference {
     font-size: 1.25rem;
-    line-height: 1.8;
   }
 }
 
-/* Responsive adjustments for phones */
 @media (max-width: 480px) {
-  .verse-section {
-    padding: 2rem;
-    margin: 1rem;
+  .big-quote {
+    font-size: 1.7rem;
   }
 
-  .verse-section h2 {
-    font-size: 1.75rem;
-  }
-
-  .verse-section p {
+  .quote-reference {
     font-size: 1.1rem;
-    line-height: 1.6;
   }
 }
-
 </style>
 
-
+<section class="big-quote-section">
+  <p class="big-quote">
+    “Trust in the Lord with all your heart<br>
+    and lean not on your own understanding.”
+  </p>
+  <span class="quote-reference">– Proverbs 3:5</span>
+</section>
 
 
 
@@ -615,354 +567,259 @@
 
 
   <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->  <!-- 3 MAIN CARD -->
-
-<style>
-.carousel1-container {
-  overflow: hidden;
-  position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  padding: 30px 0px;
-  background: transparent;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-}
-
-.carousel1-track {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  gap: 28px;
-  will-change: transform;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-
-}
-
-.carousel1-card {
-  flex: 0 0 auto;
-  width: 300px;
-  border-radius: 20px;
-  background: white;
-  box-shadow: 0 6px 8px rgba(251, 175, 65, 0.7);
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  border: 2px solid #fbaf41;
-}
-
-.carousel1-card:hover,
-.carousel1-card:focus-visible {
-  transform: scale(1.07);
-  box-shadow: 0 8px 12px rgba(251, 175, 65, 0.7);
-  outline: none;
-}
-
-.carousel1-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  display: block;
-}
-
-.carousel1-info {
-  padding: 18px 24px;
-  text-align: center;
-}
-
-.carousel1-name {
-  font-weight: 800;
-  font-size: 22px;
-  color: #1e62d0;
-  margin-bottom: 8px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.carousel1-followers {
-  font-size: 16px;
-  color: #5b6770;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.carousel1-headline {
-  font-size: 28px; /* reduced from 40px */
-  font-weight: 900; /* slightly lighter for balance */
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 10px 20px; /* slightly smaller padding */
-  border-radius: 10px;
-  border: 2px solid #fbaf41;
-  background: linear-gradient(270deg, #4a90e2, #fbaf41, #ef4037b4);
-  background-size: 600% 600%;
-  animation: iphoneGradientMove 6s ease infinite;
-  box-shadow: 0 5px 7px rgba(251, 175, 65, 0.7);
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-}
-
-/* Lightbox styles */
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right:0;
-  bottom:0;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.lightbox-overlay.active {
-  display: flex;
-}
-
-.lightbox-content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-}
-
-.lightbox-content img {
-  width: auto;
-  max-width: 90vw;
-  height: auto;
-  max-height: 80vh;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-
-.lightbox-close {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #fbaf41;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-  box-shadow: 0 0 8px rgba(251, 175, 65, 0.7);
-}
-
-
-.carousel1-socials {
-  margin-top: 10px;
-}
-
-.social-icon {
-  margin-right: 15px;
-  font-size: 28px; /* Make icons bigger */
-  color: #444;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.2);
-}
-
-.social-icon:first-child:hover {
-  color: #e1306c; /* Instagram color */
-}
-
-.social-icon:last-child:hover {
-  color: #ff0000; /* YouTube red */
-}
-
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<section id="results" style="padding-top: 100px; padding-bottom: 100px;">
-  <h2 class="carousel1-headline">Results / Clients</h2>
-  <div class="carousel1-container" id="carousel1">
-    <div class="carousel1-track" id="carousel1-track">
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 1.jpg" alt="Alice Smith" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">
-            <a href="https://www.instagram.com/nathan.to__/" target="_blank">Nate</a>
-          </div>
-          <div class="carousel1-followers">23.7k Followers</div>
-          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
-            Agency owner
-          </div>
-          <div class="carousel1-socials">
-            <a href="https://www.instagram.com/ariavisualsproduction/" target="_blank" class="social-icon" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-           
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 2.jpg" alt="Mark Johnson" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Nick</div>
-          <div class="carousel1-followers">5,720 Followers</div>
-          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
-           7 Figure seller on Amazon 🚀
-          </div>
-          <div class="carousel1-socials">
-            <a href="https://www.instagram.com/nick.guerrero_/" target="_blank" class="social-icon" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/@Nick.guerrero" target="_blank" class="social-icon" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-<div class="carousel1-card">
-  <img src="img/CLIENT IMG/CLIENT 3.jpg" alt="Emma Davis" class="clickable-img" />
-  <div class="carousel1-info">
-    <div class="carousel1-name">Harry</div>
-    <div class="carousel1-followers">78,179 Followers</div>
-    <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
-      High-Performance Coach 🚀
-    </div>
-    <div class="carousel1-socials">
-      <a href="https://www.instagram.com/harrykarydes/" target="_blank" class="social-icon" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/@harrykarydes" target="_blank" class="social-icon" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/harry-karydes/" target="_blank" class="social-icon" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 4.jpg" alt="John Carter" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Chrys Tiu</div>
-          <div class="carousel1-followers">853 Followers</div>
-          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
-            Online Coach
-          </div>
-          <div class="carousel1-socials">
-            <a href="https://www.instagram.com/iamchrystiu/" target="_blank" class="social-icon" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/@iamchrystiu/videos" target="_blank" class="social-icon" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel1-card">
-        <img src="img/CLIENT IMG/CLIENT 5.jpg" alt="Sophia Lee" class="clickable-img" />
-        <div class="carousel1-info">
-          <div class="carousel1-name">Chaz Carti</div>
-          <div class="carousel1-followers">110K subscribers</div>
-          <div class="carousel1-description" style="font-size: 14px; color: #777; margin-top: 6px; margin-bottom: 10px;">
-            Content Creator
-          </div>
-          <div class="carousel1-socials">
-            <a href="https://www.instagram.com/chazcartii/?hl=en" target="_blank" class="social-icon" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/@ChazCarti" target="_blank" class="social-icon" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lightbox Overlay -->
-  <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <span class="lightbox-close" id="lightbox-close">&times;</span>
-      <img src="" alt="Expanded Image" id="lightbox-img" />
-    </div>
-  </div>
-</section>
-
-
-<script>
-function autoScrollCarousel(trackSelector, speed = 0.5) {
-  const track = document.querySelector(trackSelector);
-  const cards = Array.from(track.children);
-
-  // Clone all cards twice for continuous seamless loop
-  const cloneSet1 = cards.map(card => card.cloneNode(true));
-  const cloneSet2 = cards.map(card => card.cloneNode(true));
-  cloneSet1.forEach(clone => track.appendChild(clone));
-  cloneSet2.forEach(clone => track.appendChild(clone));
-
-  let position = 0;
-  const singleSetWidth = track.scrollWidth / 3; // original set only
-
-  function animate() {
-    position += speed;
-
-    if (position >= singleSetWidth) {
-      // Seamlessly loop back to the same position in the cloned content
-      position -= singleSetWidth;
-      track.style.transform = `translate3d(${-position}px, 0, 0)`;
-    } else {
-      track.style.transform = `translate3d(${-position}px, 0, 0)`;
+  <style>
+    /* === CORE LAYOUT === */
+    .carousel1-container {
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      padding: 60px 0; /* extra breathing room */
+      background: transparent;
+      display: flex;
+      align-items: center;
     }
 
-    requestAnimationFrame(animate);
-  }
+    .carousel1-track {
+      display: flex;
+      flex-wrap: nowrap;
+      width: max-content;
+      gap: 32px;
+      will-change: transform;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
 
-  track.style.willChange = 'transform'; // performance boost
-  animate();
-}
+    /* === CARD === */
+    .carousel1-card {
+      flex: 0 0 auto;
+      width: 520px;            /* landscape orientation */
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 2px solid #fbaf41;
+      transition: transform 0.35s ease;
+      cursor: pointer;
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
-  autoScrollCarousel(".carousel1-track", 0.5);
+    .carousel1-card:hover,
+    .carousel1-card:focus-visible {
+      transform: scale(1.05);
+      outline: none;
+    }
 
-  // Lightbox logic (unchanged)
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-  const clickableImages = document.querySelectorAll('.clickable-img');
+    /* Media (image / video) */
+    .carousel-media {
+      width: 100%;
+      height: 292px;        /* 16:9 on 520‑width */
+      object-fit: cover;
+      display: block;
+    }
 
-  clickableImages.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('active');
+    /* === INFO / DESCRIPTION === */
+    .carousel1-info {
+      padding: 20px 28px 28px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .carousel1-description {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    /* === HEADLINE === */
+    .carousel1-headline {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: 2px solid #fbaf41;
+      background: linear-gradient(270deg, #4a90e2, #fbaf41, #ef4037b4);
+      background-size: 600% 600%;
+      animation: headlineGradientMove 6s ease infinite;
+      box-shadow: 0 5px 7px rgba(251, 175, 65, 0.7);
+      display: block;
+      margin: 0 auto 40px;
+      width: fit-content;
+    }
+
+    @keyframes headlineGradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === LIGHTBOX === */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox-overlay.active { display: flex; }
+
+    .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
+
+    .lightbox-content img,
+    .lightbox-content video {
+      max-width: 90vw; max-height: 80vh;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -10px; right: -10px;
+      background: #fbaf41; color: #fff;
+      border-radius: 50%; width: 30px; height: 30px;
+      font: 700 22px/30px "Segoe UI";
+      text-align: center; cursor: pointer; user-select: none;
+      box-shadow: 0 0 8px rgba(251, 175, 65, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <section id="results">
+    <h2 class="carousel1-headline">Results / Clients</h2>
+
+    <div class="carousel1-container" id="carousel1">
+      <div class="carousel1-track" id="carousel1-track">
+        <!-- === CARD 1 === -->
+        <div class="carousel1-card">
+          <img src="img/CLIENT IMG/Chaz sub.jpg" alt="Agency owner project" class="carousel-media clickable-media" />
+          <div class="carousel1-info">
+            <p class="carousel1-description">I help Chaz grow faster by editing high-retention videos and managing when to post 
+              — so more viewers subscribe and stay hooked.</p>
+          </div>
+        </div>
+
+        <!-- === CARD 2 === -->
+        <div class="carousel1-card">
+          <video src="img/T video/NATE.mp4" class="carousel-media clickable-media" autoplay loop muted playsinline></video>
+          <div class="carousel1-info">
+            <p class="carousel1-description">Nate, an agency owner — I help drive better results while working with different clients across various industries.</p>
+          </div>
+        </div>
+
+        <!-- === CARD 3 === -->
+        <div class="carousel1-card">
+          <img src="img/CLIENT IMG/Nick insta.jpg" alt="High‑Performance Coach content" class="carousel-media clickable-media" />
+          <div class="carousel1-info">
+            <p class="carousel1-description">I help Nick, an Amazon agency owner, edit course videos that look pro and deliver value
+               — making his content clearer, sharper, and easier to sell.</p>
+          </div>
+        </div>
+
+          <!-- === CARD 4 === -->
+        <div class="carousel1-card">
+          <img src="img/CLIENT IMG/Harry.bmp" alt="High‑Performance Coach content" class="carousel-media clickable-media" />
+          <div class="carousel1-info">
+            <p class="carousel1-description">I work with Harry to turn his ideas into clean, engaging videos that feel 
+          real and connect with his audience — helping his brand grow one post at a time.</p>
+          </div>
+        </div>
+      
+
+
+      </div>
+    </div>
+
+    <!-- === LIGHTBOX OVERLAY === -->
+    <div class="lightbox-overlay" id="lightbox">
+      <div class="lightbox-content">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <!-- media will be injected here -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* === AUTOSCROLL === */
+    function autoScrollCarousel(trackSelector, speed = 0.6) {
+      const track = document.querySelector(trackSelector);
+      const cards = Array.from(track.children);
+
+      // Clone all cards twice for infinite loop
+      const cloneSet1 = cards.map(card => card.cloneNode(true));
+      const cloneSet2 = cards.map(card => card.cloneNode(true));
+      cloneSet1.forEach(clone => track.appendChild(clone));
+      cloneSet2.forEach(clone => track.appendChild(clone));
+
+      let position = 0;
+      const singleSetWidth = track.scrollWidth / 3; // original set only
+
+      function animate() {
+        position += speed;
+        if (position >= singleSetWidth) {
+          position -= singleSetWidth;
+          track.style.transform = `translate3d(${-position}px, 0, 0)`;
+        } else {
+          track.style.transform = `translate3d(${-position}px, 0, 0)`;
+        }
+        requestAnimationFrame(animate);
+      }
+
+      track.style.willChange = "transform";
+      animate();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      autoScrollCarousel(".carousel1-track", 0.6);
+
+      /* === LIGHTBOX (works for both images & videos) === */
+      const lightbox = document.getElementById("lightbox");
+      const lightboxContent = document.querySelector(".lightbox-content");
+      const closeBtn = document.getElementById("lightbox-close");
+      const clickableMedia = document.querySelectorAll(".clickable-media");
+
+      // utility to clear previous media
+      function clearLightbox() {
+        const media = lightboxContent.querySelector("img, video");
+        if (media) media.remove();
+      }
+
+      clickableMedia.forEach((media) => {
+        media.addEventListener("click", () => {
+          clearLightbox();
+          const clone = media.cloneNode(true);
+          clone.removeAttribute("class");
+          clone.style.maxWidth = "90vw";
+          clone.style.maxHeight = "80vh";
+          if (clone.tagName === "VIDEO") {
+            clone.controls = true;
+            clone.currentTime = 0;
+          }
+          lightboxContent.appendChild(clone);
+          lightbox.classList.add("active");
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+        clearLightbox();
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+          clearLightbox();
+        }
+      });
     });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('active');
-    }
-  });
-});
-</script>
+  </script>
 
   
 <!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
@@ -1098,7 +955,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Video item -->
         <div class="iphone-style-col">
             <div class="iphone-style-iframe-container">
-                <iframe src="https://www.youtube.com/embed/VB2eipM-3WQ?si=iNWo2bELDDZ3MPmB" allowfullscreen></iframe>
+                <iframe src="https://drive.google.com/file/d/1s_5Tq9-HoGA0IlCnnpe0Z9oIREPkDhvZ/preview" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -1121,11 +978,13 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
 
-        <div class="iphone-style-col">
-            <div class="iphone-style-iframe-container">
-                <iframe src="" allowfullscreen></iframe>
-            </div>
-        </div>
+        
+     <div class="iphone-style-col">
+  <div class="iphone-style-iframe-container">
+    <iframe src="https://www.youtube.com/embed/VB2eipM-3WQ?si=iNWo2bELDDZ3MPmB" allowfullscreen width="100%" height="480" frameborder="0"></iframe>
+  </div>
+</div>
+
         
     </div>
 
@@ -1220,16 +1079,13 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2 class="uppercase" tabindex="0">Hi, I'm Jomiruu</h2>
       <h5>The Enthusiastic Guy</h5>
       <p class="text-experience">
-        Video Editor / Motion Graphics Artist. Focusing on one thing has
-        driven me to achieve greater results. It's been a tough process, but I
-        finally figured it out.
+       🎥 Video Editor & Motion Graphics Artist — I help brands and creators turn raw clips into scroll-stopping content that actually connects and performs.
+
       </p>
       <p class="text-experience">
-        With years of practice and experience, using software like Adobe
-        Photoshop, After Effects, and Illustrator, and by watching tutorials
-        on YouTube, Skillshare, and Patreon — Practice happens along the way.
-        Practice, experience, and discipline make everything fall into place.
-        Every 1% matters!
+       Years of practice with After Effects, Photoshop, and Illustrator taught me this: progress is built daily. Every 1% adds up — and that’s what makes the work stand out.
+
+
       </p>
 
       <!-- Social Links -->
@@ -1327,7 +1183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       onclick="toggleAnswer(2)"
       onkeydown="handleKeydown(event, 2)"
     >
-      <span>What do you need from me to get started?</span>
+      <span>What do I need to send you before you start❓</span>
       <span class="toggle-icon" aria-hidden="true">+</span>
     </button>
     <div
@@ -1338,9 +1194,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hidden
     >
       <p>
-        Just a clear idea of what you want — any references, goals, or specific
-        details. The more info you share upfront, the smoother and faster we
-        can get rolling.
+      ✅ Just send your clips, logo (if any), and a few notes about your brand or goal. I’ll handle the rest — editing, captions, motion graphics, and thumbnails.
       </p>
     </div>
   </div>
@@ -1354,7 +1208,7 @@ document.addEventListener("DOMContentLoaded", () => {
       onclick="toggleAnswer(3)"
       onkeydown="handleKeydown(event, 3)"
     >
-      <span>How much does this usually cost?</span>
+      <span>What makes you different from other editors❓</span>
       <span class="toggle-icon" aria-hidden="true">+</span>
     </button>
     <div
@@ -1365,9 +1219,11 @@ document.addEventListener("DOMContentLoaded", () => {
       hidden
     >
       <p>
-        It really depends on what you need. Once I know more about your
-        project, I can give you a fair quote—and we can always talk it through
-        to make sure it works for you.
+       ✅ Most editors just make things “look good.” I built a system that gets you results fast — scroll-stopping
+        reels, optimized visuals, and a delivery workflow that saves you time. You get clean edits that feel on-brand,
+        land with your audience, and don’t slow you down.
+
+
       </p>
     </div>
   </div>
