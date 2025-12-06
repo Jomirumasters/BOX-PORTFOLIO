@@ -692,136 +692,83 @@
   </style>
 </head>
 <body>
-  <section id="results">
-    <h2 class="carousel1-headline">Results / Clients</h2>
+<!-- Static 5-Reel Grid (Clickable, No Horizontal Scroll) -->
+<style>
+  .reel-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 10px;
+    font-family: 'Inter', sans-serif;
+  }
 
-    <div class="carousel1-container" id="carousel1">
-      <div class="carousel1-track" id="carousel1-track">
-        <!-- === CARD 1 === -->
-        <div class="carousel1-card">
-          <img src="img/CLIENT IMG/Chaz sub.jpg" alt="Agency owner project" class="carousel-media clickable-media" />
-          <div class="carousel1-info">
-            <p class="carousel1-description">I help Chaz grow faster by editing high-retention videos and managing when to post 
-              — so more viewers subscribe and stay hooked.</p>
-          </div>
-        </div>
+  .reel-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-        <!-- === CARD 2 === -->
-        <div class="carousel1-card">
-          <video src="img/T video/NATE.mp4" class="carousel-media clickable-media" autoplay loop muted playsinline></video>
-          <div class="carousel1-info">
-            <p class="carousel1-description">Nate, an agency owner — I help drive better results while working with different clients across various industries.</p>
-          </div>
-        </div>
+  /* Static grid, no scroll */
+  .reel-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
 
-        <!-- === CARD 3 === -->
-        <div class="carousel1-card">
-          <img src="img/CLIENT IMG/Nick insta.jpg" alt="High‑Performance Coach content" class="carousel-media clickable-media" />
-          <div class="carousel1-info">
-            <p class="carousel1-description">I help Nick, an Amazon agency owner, edit course videos that look pro and deliver value
-               — making his content clearer, sharper, and easier to sell.</p>
-          </div>
-        </div>
+  .reel-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
 
-          <!-- === CARD 4 === -->
-        <div class="carousel1-card">
-          <img src="img/CLIENT IMG/Harry.bmp" alt="High‑Performance Coach content" class="carousel-media clickable-media" />
-          <div class="carousel1-info">
-            <p class="carousel1-description">I work with Harry to turn his ideas into clean, engaging videos that feel 
-          real and connect with his audience — helping his brand grow one post at a time.</p>
-          </div>
-        </div>
-      
+  .reel-card iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    display: block;
+  }
 
+  .reel-desc {
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #333;
+  }
+</style>
 
-      </div>
+<section class="reel-section">
+  <h2 class="reel-title">Client Reels</h2>
+
+  <div class="reel-grid">
+
+    <div class="reel-card">
+      <iframe src="https://www.instagram.com/reel/DIARGqdJD3i/embed" allowfullscreen></iframe>
+      <div class="reel-desc">Reel 1</div>
     </div>
 
-    <!-- === LIGHTBOX OVERLAY === -->
-    <div class="lightbox-overlay" id="lightbox">
-      <div class="lightbox-content">
-        <span class="lightbox-close" id="lightbox-close">&times;</span>
-        <!-- media will be injected here -->
-      </div>
+    <div class="reel-card">
+      <iframe src="https://www.instagram.com/reel/DH4UyE3p23M/embed" allowfullscreen></iframe>
+      <div class="reel-desc">Reel 2</div>
     </div>
-  </section>
 
-  <script>
-    /* === AUTOSCROLL === */
-    function autoScrollCarousel(trackSelector, speed = 0.6) {
-      const track = document.querySelector(trackSelector);
-      const cards = Array.from(track.children);
+    <div class="reel-card">
+      <iframe src="https://www.instagram.com/reel/DGglG8eJXD9/embed" allowfullscreen></iframe>
+      <div class="reel-desc">Reel 3</div>
+    </div>
 
-      // Clone all cards twice for infinite loop
-      const cloneSet1 = cards.map(card => card.cloneNode(true));
-      const cloneSet2 = cards.map(card => card.cloneNode(true));
-      cloneSet1.forEach(clone => track.appendChild(clone));
-      cloneSet2.forEach(clone => track.appendChild(clone));
+    <div class="reel-card">
+      <iframe src="https://www.instagram.com/reel/DFgP0qIyopb/embed" allowfullscreen></iframe>
+      <div class="reel-desc">Reel 4</div>
+    </div>
 
-      let position = 0;
-      const singleSetWidth = track.scrollWidth / 3; // original set only
+    <div class="reel-card">
+      <iframe src="https://www.instagram.com/reel/DG95YByMy0N/embed" allowfullscreen></iframe>
+      <div class="reel-desc">Reel 5</div>
+    </div>
 
-      function animate() {
-        position += speed;
-        if (position >= singleSetWidth) {
-          position -= singleSetWidth;
-          track.style.transform = `translate3d(${-position}px, 0, 0)`;
-        } else {
-          track.style.transform = `translate3d(${-position}px, 0, 0)`;
-        }
-        requestAnimationFrame(animate);
-      }
-
-      track.style.willChange = "transform";
-      animate();
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      autoScrollCarousel(".carousel1-track", 0.6);
-
-      /* === LIGHTBOX (works for both images & videos) === */
-      const lightbox = document.getElementById("lightbox");
-      const lightboxContent = document.querySelector(".lightbox-content");
-      const closeBtn = document.getElementById("lightbox-close");
-      const clickableMedia = document.querySelectorAll(".clickable-media");
-
-      // utility to clear previous media
-      function clearLightbox() {
-        const media = lightboxContent.querySelector("img, video");
-        if (media) media.remove();
-      }
-
-      clickableMedia.forEach((media) => {
-        media.addEventListener("click", () => {
-          clearLightbox();
-          const clone = media.cloneNode(true);
-          clone.removeAttribute("class");
-          clone.style.maxWidth = "90vw";
-          clone.style.maxHeight = "80vh";
-          if (clone.tagName === "VIDEO") {
-            clone.controls = true;
-            clone.currentTime = 0;
-          }
-          lightboxContent.appendChild(clone);
-          lightbox.classList.add("active");
-        });
-      });
-
-      closeBtn.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-        clearLightbox();
-      });
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove("active");
-          clearLightbox();
-        }
-      });
-    });
-  </script>
-
-  
+  </div>
+</section>
 <!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel--><!-- 1st carousel-->
 
 <!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel--><!-- 2nd carousel-->
